@@ -31,5 +31,19 @@ exports.es = {
     "wind_speed_10m_max": "Velocidad del viento máx.",
     "wind_direction_10m_dominant": "Dirección del viento dominante",
     "wind_gusts_10m_max": "Ráfagas de viento máx.",
-    "dew_point_2m_mean": "Punto de rocío medio (2m)"
+    "dew_point_2m_mean": "Punto de rocío medio (2m)",
+    // Luftqualität (Air Quality)
+    "european_aqi": "Índice Europeo de Calidad del Aire",
+    "pm10": "Partículas en suspensión PM10",
+    "pm2_5": "Partículas en suspensión PM2.5",
+    "alder_pollen": "Polen de Aliso",
+    "birch_pollen": "Polen de Abedul",
+    "grass_pollen": "Polen de Gramíneas",
+    "mugwort_pollen": "Polen de Artemisa",
+    "ragweed_pollen": "Polen de Ambrosía",
+    "ragweed_pollen_text": "Nivel de polen de ambrosía",
+    "mugwort_pollen_text": "Nivel de polen de artemisa",
+    "grass_pollen_text": "Nivel de polen de gramíneas",
+    "birch_pollen_text": "Nivel de polen de abedul",
+    "alder_pollen_text": "Nivel de polen de aliso"
 };

@@ -29,5 +29,20 @@ export const en = {
     "wind_speed_10m_max": "Max. Wind Speed",
     "wind_direction_10m_dominant": "Dominant Wind Direction",
     "wind_gusts_10m_max": "Max. Wind Gusts",
-    "dew_point_2m_mean": "Mean Dew Point (2m)"
+    "dew_point_2m_mean": "Mean Dew Point (2m)",
+    
+    // Luftqualität (Air Quality)
+    "european_aqi": "European Air Quality Index",
+    "pm10": "PM10 Particulate Matter",
+    "pm2_5": "PM2.5 Particulate Matter",
+    "alder_pollen": "Alder Pollen",
+    "birch_pollen": "Birch Pollen",
+    "grass_pollen": "Grass Pollen",
+    "mugwort_pollen": "Mugwort Pollen",
+    "ragweed_pollen": "Ragweed Pollen",
+    "ragweed_pollen_text": "Ragweed Pollen Text",
+    "mugwort_pollen_text": "Mugwort Pollen Text",
+    "grass_pollen_text": "Grass Pollen Text",
+    "birch_pollen_text": "Birch Pollen Text",
+    "alder_pollen_text": "Alder Pollen Text"
 };

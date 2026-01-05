@@ -31,5 +31,19 @@ exports.it = {
     "wind_speed_10m_max": "Velocità del vento max",
     "wind_direction_10m_dominant": "Direzione del vento dominante",
     "wind_gusts_10m_max": "Raffiche di vento max",
-    "dew_point_2m_mean": "Punto di rugiada medio (2m)"
+    "dew_point_2m_mean": "Punto di rugiada medio (2m)",
+    // Luftqualität (Air Quality)
+    "european_aqi": "Indice europeo di qualità dell'aria",
+    "pm10": "Particolato PM10",
+    "pm2_5": "Particolato PM2.5",
+    "alder_pollen": "Polline di ontano",
+    "birch_pollen": "Polline di betulla",
+    "grass_pollen": "Polline di graminacee",
+    "mugwort_pollen": "Polline di artemisia",
+    "ragweed_pollen": "Polline di ambrosia",
+    "ragweed_pollen_text": "Livello polline di ambrosia",
+    "mugwort_pollen_text": "Livello polline di artemisia",
+    "grass_pollen_text": "Livello polline di graminacee",
+    "birch_pollen_text": "Livello polline di betulla",
+    "alder_pollen_text": "Livello polline di ontano"
 };

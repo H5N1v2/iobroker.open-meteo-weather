@@ -28,5 +28,20 @@ export const pt = {
     "wind_speed_10m_max": "Velocidade do vento máx.",
     "wind_direction_10m_dominant": "Direção do vento dominante",
     "wind_gusts_10m_max": "Rajadas de vento máx.",
-    "dew_point_2m_mean": "Ponto de orvalho médio (2m)"
+    "dew_point_2m_mean": "Ponto de orvalho médio (2m)",
+
+    // Luftqualität (Air Quality)
+    "european_aqi": "Índice Europeu de Qualidade do Ar",
+    "pm10": "Partículas em suspensão PM10",
+    "pm2_5": "Partículas em suspensão PM2.5",
+    "alder_pollen": "Pólen de Alno",
+    "birch_pollen": "Pólen de Bétula",
+    "grass_pollen": "Pólen de Gramíneas",
+    "mugwort_pollen": "Pólen de Artemísia",
+    "ragweed_pollen": "Pólen de Ambrósia",
+    "ragweed_pollen_text": "Nível de pólen de ambrósia",
+    "mugwort_pollen_text": "Nível de pólen de artemísia",
+    "grass_pollen_text": "Nível de pólen de gramíneas",
+    "birch_pollen_text": "Nível de pólen de bétula",
+    "alder_pollen_text": "Nível de pólen de alno"
 };

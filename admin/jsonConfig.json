@@ -5,14 +5,23 @@
             "type": "panel",
             "label": "Einstellungen",
             "items": {
+                "icontest": {
+                    "type": "staticImage",
+                    "src": "open-meteo.png",
+                    "newLine": true,
+                    "sm": 2
+                },
                 "descriptionText": {
                     "type": "staticText",
-                    "text": "Dieser Adapter ruft aktuelle Wetterdaten, Vorhersagen sowie Pollenflug- und Luftqualitätsdaten basierend auf deinen Standortkoordinaten ab.",
-                    "style": { "fontStyle": "italic", "marginBottom": "20px" }
+                    "text": "Dieser Adapter ruft aktuelle Wetterdaten, Vorhersagen sowie Pollenflug- und Luftqualitätsdaten ab.",
+                    "style": { "fontStyle": "italic", "marginBottom": "20px" },
+                    "sm": 10
                 },
                 "locationLabel": {
                     "type": "header",
-                    "text": "Standort-Koordinaten"
+                    "text": "Standort-Koordinaten",
+                    "size": 5,
+                    "sm": 12
                 },
                 "latitude": {
                     "type": "number",
@@ -27,29 +36,19 @@
                 "settingsLabel": {
                     "type": "header",
                     "text": "Optionen",
+                    "size": 5,
+                    "sm": 12,
                     "style": { "marginTop": "20px" }
                 },
                 "interval": {
                     "type": "select",
                     "label": "Update-Intervall",
-                    "default": 15,
+                    "default": 30,
                     "options": [
                         { "value": 15, "label": "15 Minuten" },
                         { "value": 30, "label": "30 Minuten" },
                         { "value": 60, "label": "60 Minuten" }
                     ],
-                    "sm": 6
-                },
-                "pollenEnabled": {
-                    "type": "checkbox",
-                    "label": "Pollenflug-Daten abrufen",
-                    "default": true,
-                    "sm": 6
-                },
-                "airQualityEnabled": {
-                    "type": "checkbox",
-                    "label": "Luftqualität abrufen",
-                    "default": true,
                     "sm": 6
                 },
                 "forecastDays": {
@@ -63,6 +62,18 @@
                         { "value": 16, "label": "16 Tage" }
                     ],
                     "sm": 6
+                },
+                "pollenEnabled": {
+                    "type": "checkbox",
+                    "label": "Pollenflug-Daten abrufen",
+                    "default": true,
+                    "sm": 3
+                },
+                "airQualityEnabled": {
+                    "type": "checkbox",
+                    "label": "Luftqualität abrufen",
+                    "default": true,
+                    "sm": 3
                 }
             }
         }

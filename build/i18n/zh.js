@@ -31,5 +31,19 @@ exports.zh = {
     "wind_speed_10m_max": "最大风速",
     "wind_direction_10m_dominant": "主导风向",
     "wind_gusts_10m_max": "最大阵风",
-    "dew_point_2m_mean": "平均露点温度 (2米)"
+    "dew_point_2m_mean": "平均露点温度 (2米)",
+    // Luftqualität (Air Quality)
+    "european_aqi": "欧洲空气质量指数",
+    "pm10": "PM10颗粒物",
+    "pm2_5": "PM2.5颗粒物",
+    "alder_pollen": "桤木花粉",
+    "birch_pollen": "桦树花粉",
+    "grass_pollen": "草花粉",
+    "mugwort_pollen": "艾蒿花粉",
+    "ragweed_pollen": "豚草花粉",
+    "ragweed_pollen_text": "豚草花粉文本",
+    "mugwort_pollen_text": "艾蒿花粉文本",
+    "grass_pollen_text": "草花粉文本",
+    "birch_pollen_text": "桦树花粉文本",
+    "alder_pollen_text": "桤木花粉文本",
 };

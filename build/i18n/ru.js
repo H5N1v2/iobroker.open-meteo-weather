@@ -31,5 +31,19 @@ exports.ru = {
     "wind_speed_10m_max": "Макс. скорость ветра",
     "wind_direction_10m_dominant": "Преобладающее направление ветра",
     "wind_gusts_10m_max": "Макс. порывы ветра",
-    "dew_point_2m_mean": "Средняя точка росы (2м)"
+    "dew_point_2m_mean": "Средняя точка росы (2м)",
+    // Luftqualität (Air Quality)
+    "european_aqi": "Европейский индекс качества воздуха",
+    "pm10": "Мелкодисперсная пыль PM10",
+    "pm2_5": "Мелкодисперсная пыль PM2.5",
+    "alder_pollen": "Пыльца ольхи",
+    "birch_pollen": "Пыльца березы",
+    "grass_pollen": "Пыльца травы",
+    "mugwort_pollen": "Пыльца полыни",
+    "ragweed_pollen": "Пыльца амброзии",
+    "ragweed_pollen_text": "Текст пыльцы амброзии",
+    "mugwort_pollen_text": "Текст пыльцы полыни",
+    "grass_pollen_text": "Текст пыльцы травы",
+    "birch_pollen_text": "Текст пыльцы березы",
+    "alder_pollen_text": "Текст пыльцы ольхи"
 };

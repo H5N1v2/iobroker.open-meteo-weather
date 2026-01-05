@@ -3,6 +3,9 @@
     "name": "open-meteo-weather",
     "version": "0.1.0",
     "title": "Open-Meteo Weather Service",
+    "adminUI": {
+      "config": "json"
+    },
     "titleLang": {
       "en": "Open-Meteo Weather Service",
       "de": "Open-Meteo Wetterdienst",

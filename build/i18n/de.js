@@ -31,5 +31,19 @@ exports.de = {
     "wind_speed_10m_max": "Max. Windgeschwindigkeit",
     "wind_direction_10m_dominant": "Vorherrschende Windrichtung",
     "wind_gusts_10m_max": "Max. Windböen",
-    "dew_point_2m_mean": "Durchschnittlicher Taupunkt (2m)"
+    "dew_point_2m_mean": "Durchschnittlicher Taupunkt (2m)",
+    // Luftqualität (Air Quality)
+    "european_aqi": "Europäischer Luftqualitätsindex",
+    "pm10": "Feinstaub PM10",
+    "pm2_5": "Feinstaub PM2.5",
+    "alder_pollen": "Erlenpollen",
+    "birch_pollen": "Birkenpollen",
+    "grass_pollen": "Graspollen",
+    "mugwort_pollen": "Beifußpollen",
+    "ragweed_pollen": "Ambrosiapollen",
+    "ragweed_pollen_text": "Ambrosiapollen Text",
+    "mugwort_pollen_text": "Beifußpollen Text",
+    "grass_pollen_text": "Graspollen Text",
+    "birch_pollen_text": "Birkenpollen Text",
+    "alder_pollen_text": "Erlenpollen Text"
 };

@@ -29,5 +29,20 @@ export const pl = {
     "wind_speed_10m_max": "Maksymalna prędkość wiatru",
     "wind_direction_10m_dominant": "Dominujący kierunek wiatru",
     "wind_gusts_10m_max": "Maksymalne porywy wiatru",
-    "dew_point_2m_mean": "Średnia temperatura punktu rosy (2m)" // 'Punkt rosy' ist der Taupunkt
+    "dew_point_2m_mean": "Średnia temperatura punktu rosy (2m)",
+    
+    // Luftqualität (Air Quality)
+    "european_aqi": "Europejski indeks jakości powietrza",
+    "pm10": "Pył zawieszony PM10",
+    "pm2_5": "Pył zawieszony PM2.5",
+    "alder_pollen": "Pyłek olchy",
+    "birch_pollen": "Pyłek brzozy",
+    "grass_pollen": "Pyłek traw",
+    "mugwort_pollen": "Pyłek bylicy",
+    "ragweed_pollen": "Pyłek ambrozji",
+    "ragweed_pollen_text": "Poziom pyłku ambrozji",
+    "mugwort_pollen_text": "Poziom pyłku bylicy",
+    "grass_pollen_text": "Poziom pyłku traw",
+    "birch_pollen_text": "Poziom pyłku brzozy",
+    "alder_pollen_text": "Poziom pyłku olchy"
 };
