@@ -51,6 +51,18 @@
                     "label": "Luftqualität abrufen",
                     "default": true,
                     "sm": 6
+                },
+                "forecastDays": {
+                    "type": "select",
+                    "label": "Anzahl der Tage für Vorhersage",
+                    "default": 7,
+                    "options": [
+                        { "value": 3, "label": "3 Tage" },
+                        { "value": 7, "label": "7 Tage" },
+                        { "value": 14, "label": "14 Tage" },
+                        { "value": 16, "label": "16 Tage" }
+                    ],
+                    "sm": 6
                 }
             }
         }

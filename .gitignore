@@ -3,7 +3,7 @@ node_modules/
 
 # ioBroker Entwicklungs-Tools
 .dev-server/
-
+.continue/
 # VS Code & Betriebssystem
 .vscode/
 .DS_Store

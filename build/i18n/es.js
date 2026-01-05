@@ -1,0 +1,35 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.es = void 0;
+exports.es = {
+    // Aktuelle Werte (Current)
+    "temperature_2m": "Temperatura (2m)",
+    "relative_humidity_2m": "Humedad relativa (2m)",
+    "apparent_temperature": "Sensación térmica",
+    "precipitation": "Precipitación",
+    "weather_code": "Código del tiempo",
+    "cloud_cover": "Nubosidad",
+    "wind_speed_10m": "Velocidad del viento (10m)",
+    "wind_direction_10m": "Dirección del viento (10m)",
+    "wind_gusts_10m": "Ráfagas de viento (10m)",
+    "is_day": "Día/Noche",
+    "dew_point_2m": "Punto de rocío (2m)",
+    "wind_direction_text": "Dirección del viento texto",
+    "weather_text": "Texto del tiempo",
+    "icon_url": "URL del icono",
+    "time": "Hora",
+    // Tägliche Vorhersage (Daily)
+    "temperature_2m_max": "Temperatura máx.",
+    "temperature_2m_min": "Temperatura mín.",
+    "sunrise": "Amanecer",
+    "sunset": "Atardecer",
+    "sunshine_duration": "Duración del sol",
+    "uv_index_max": "Índice UV máx.",
+    "rain_sum": "Suma de lluvia",
+    "snowfall_sum": "Suma de nieve",
+    "precipitation_probability_max": "Probabilidad de precipitación máx.",
+    "wind_speed_10m_max": "Velocidad del viento máx.",
+    "wind_direction_10m_dominant": "Dirección del viento dominante",
+    "wind_gusts_10m_max": "Ráfagas de viento máx.",
+    "dew_point_2m_mean": "Punto de rocío medio (2m)"
+};

@@ -1,0 +1,33 @@
+export const de = {
+    // Aktuelle Werte (Current)
+    "temperature_2m": "Temperatur (2m)",
+    "relative_humidity_2m": "Relative Luftfeuchtigkeit (2m)",
+    "apparent_temperature": "Gefühlte Temperatur",
+    "precipitation": "Niederschlag",
+    "weather_code": "Wetter-Code",
+    "cloud_cover": "Bewölkung",
+    "wind_speed_10m": "Windgeschwindigkeit (10m)",
+    "wind_direction_10m": "Windrichtung (10m)",
+    "wind_gusts_10m": "Windböen (10m)",
+    "is_day": "Tag/Nacht",
+    "dew_point_2m": "Taupunkt (2m)",
+    "wind_direction_text": "Windrichtung Text",
+    "weather_text": "Wetter Text",
+    "icon_url": "Icon URL",
+    "time": "Zeit",
+    
+    // Tägliche Vorhersage (Daily)
+    "temperature_2m_max": "Max. Temperatur",
+    "temperature_2m_min": "Min. Temperatur",
+    "sunrise": "Sonnenaufgang",
+    "sunset": "Sonnenuntergang",
+    "sunshine_duration": "Sonnenscheindauer",
+    "uv_index_max": "Max. UV-Index",
+    "rain_sum": "Regensumme",
+    "snowfall_sum": "Schneefallsumme",
+    "precipitation_probability_max": "Max. Niederschlagswahrscheinlichkeit",
+    "wind_speed_10m_max": "Max. Windgeschwindigkeit",
+    "wind_direction_10m_dominant": "Vorherrschende Windrichtung",
+    "wind_gusts_10m_max": "Max. Windböen",
+    "dew_point_2m_mean": "Durchschnittlicher Taupunkt (2m)"
+};

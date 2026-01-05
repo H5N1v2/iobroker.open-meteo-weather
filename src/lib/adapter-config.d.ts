@@ -12,6 +12,7 @@ declare global {
             pollenEnabled: boolean;
             airQualityEnabled: boolean;
             language: string;
+            forecastDays: number;
         }
     }
 }

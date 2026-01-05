@@ -1,5 +1,5 @@
 {
-"common": {
+  "common": {
     "name": "open-meteo-weather",
     "version": "0.1.0",
     "title": "Open-Meteo Weather Service",
@@ -34,5 +34,14 @@
     "type": "weather",
     "mode": "daemon",
     "platform": "Javascript/Node.js"
+  },
+  "native": {
+    "latitude": 51.34,
+    "longitude": 12.37,
+    "interval": 30,
+    "pollenEnabled": true,
+    "airQualityEnabled": true,
+    "language": "de",
+    "forecastDays": 3
   }
 }
