@@ -54,6 +54,8 @@
     "pollenEnabled": true,
     "airQualityEnabled": false,
     "language": "de",
-    "forecastDays": 1
+    "forecastDays": 1,
+    "forecastHours": 1,
+    "forecastHoursEnabled": false
   }
 }

@@ -18,7 +18,7 @@ exports.es = {
     "weather_text": "Texto del tiempo",
     "icon_url": "URL del icono",
     "time": "Hora",
-    // Tägliche Vorhersage (Daily)
+    // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Temperatura máx.",
     "temperature_2m_min": "Temperatura mín.",
     "sunrise": "Amanecer",
@@ -26,6 +26,10 @@ exports.es = {
     "sunshine_duration": "Duración del sol",
     "uv_index_max": "Índice UV máx.",
     "rain_sum": "Suma de lluvia",
+    "rain": "Lluvia",
+    "soil_temperature_0cm": "Temperatura del suelo (0cm)",
+    "snowfall": "Nieve",
+    "snow_depth": "Profundidad de nieve",
     "snowfall_sum": "Suma de nieve",
     "precipitation_probability_max": "Probabilidad de precipitación máx.",
     "wind_speed_10m_max": "Velocidad del viento máx.",

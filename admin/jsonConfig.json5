@@ -1,77 +1,128 @@
 {
-    "i18n": true,
-    "type": "tabs",
-    "items": {
-        "main": {
-            "type": "panel",
-            "label": "settings_label", 
-            "items": {
-                "icontest": {
-                    "type": "staticImage",
-                    "src": "open-meteo.png",
-                    "newLine": true,
-                    "sm": 2
-                },
-                "descriptionText": {
-                    "type": "staticText",
-                    "text": "descriptionText_text",
-                    "style": { "fontStyle": "italic", "marginBottom": "20px" },
-                    "sm": 10
-                },
-                "locationLabel": {
-                    "type": "header",
-                    "text": "location_header_text",
-                    "size": 5,
-                    "sm": 12
-                },
-                "latitude": {
-                    "type": "number",
-                    "label": "latitude_label",
-                    "sm": 6
-                },
-                "longitude": {
-                    "type": "number",
-                    "label": "longitude_label",
-                    "sm": 6
-                },
-                "settingsLabel": {
-                    "type": "header",
-                    "text": "options_header_text",
-                    "size": 5,
-                    "sm": 12,
-                    "style": { "marginTop": "20px" }
-                },
-                "interval": {
-                    "type": "select",
-                    "label": "interval_label",
-                    "default": 30,
-                    "options": [
-                        { "value": 15, "label": "interval_15_min" },
-                        { "value": 30, "label": "interval_30_min" },
-                        { "value": 60, "label": "interval_60_min" }
-                    ],
-                    "sm": 6
-                },
-                "forecastDays": {
-                    "type": "select",
-                    "label": "forecastDays_label",
-                    "default": 1,
-                    "options": [
-                        { "value": 1, "label": "days_1" },
-                        { "value": 3, "label": "days_3" },
-                        { "value": 7, "label": "days_7" },
-                        { "value": 14, "label": "days_14" },
-                        { "value": 16, "label": "days_16" }
-                    ],
-                    "sm": 6
-                },
-                "airQualityEnabled": {
-                    "type": "checkbox",
-                    "label": "airQualityEnabled_label",
-                    "default": false,
-                    "sm": 3
-                }
+  "i18n": true,
+  "type": "tabs",
+  "items": {
+    "main": {
+      "type": "panel",
+      "label": "settings_label",
+      "items": {
+        // Logo und Beschreibung
+        "headerPanel": {
+          "type": "panel",
+          "sm": 12,
+          "items": {
+            "icontest": {
+              "type": "staticImage",
+              "src": "open-meteo.png",
+              "sm": 2
+            },
+            "descriptionText": {
+              "type": "staticText",
+              "text": "descriptionText_text",
+              "style": {
+                "fontStyle": "italic"
+              },
+              "sm": 10
             }
+          }
+        },
+        "locationLabel": {
+          "type": "header",
+          "text": "location_header_text",
+          "size": 5,
+          "sm": 12
+        },
+        // Koordinaten nebeneinander
+        "latitude": {
+          "type": "number",
+          "label": "latitude_label",
+          "sm": 6
+        },
+        "longitude": {
+          "type": "number",
+          "label": "longitude_label",
+          "sm": 6
+        },
+        "divider1": {
+          "type": "divider",
+          "sm": 12
+        },
+        "options_header": {
+          "type": "header",
+          "text": "options_header_text",
+          "size": 5,
+          "sm": 12
+        },
+        // Abrufintervall (Alleine in einer Zeile)
+        "updateInterval": {
+          "type": "select",
+          "label": "interval_label",
+          "default": 30,
+          "options": [
+            { "value": 15, "label": "interval_15_min" },
+            { "value": 30, "label": "interval_30_min" },
+            { "value": 60, "label": "interval_60_min" }
+          ],
+          "sm": 4 // Nimmt nur ein Drittel ein, sieht sauberer aus
+        },
+        "newLine1": { "type": "staticText", "text": "", "sm": 8 }, // Platzhalter für Rest der Zeile
+        
+        // Tägliche Vorhersage
+        "forecastDays": {
+          "type": "select",
+          "label": "forecastDays_label",
+          "default": 1,
+          "options": [
+            { "value": 1, "label": "days_1" },
+            { "value": 3, "label": "days_3" },
+            { "value": 7, "label": "days_7" },
+            { "value": 14, "label": "days_14" },
+            { "value": 16, "label": "days_16" }
+          ],
+          "sm": 4,
+          "newLine": true
+        },
+
+        "divider2": { "type": "divider", "sm": 12 },
+
+        // Sektion: Stündliche Vorhersage (Checkbox VOR Auswahl)
+        "forecastHoursEnabled": {
+          "type": "checkbox",
+          "label": "forecastHoursEnabled_label",
+          "default": false,
+          "sm": 3,
+          "newLine": true
+        },
+        "forecastHours": {
+          "type": "select",
+          "label": "forecastHours_label",
+          "default": 1,
+          "options": [
+            { "value": 1, "label": "Hours_1" },
+            { "value": 6, "label": "Hours_6" },
+            { "value": 12, "label": "Hours_12" },
+            { "value": 24, "label": "Hours_24" }
+          ],
+          "sm": 4,
+          "hidden": "!data.forecastHoursEnabled" // Wird nur angezeigt, wenn Checkbox aktiv ist
+        },
+
+        // Sektion: Luftqualität
+        "airQualityEnabled": {
+          "type": "checkbox",
+          "label": "airQualityEnabled_label",
+          "default": false,
+          "sm": 3,
+          "newLine": true
+        },
+        "airQualityHint": {
+          "type": "staticText",
+          "text": "Aktiviert zusätzliche Luftqualitätsdaten",
+          "sm": 6,
+          "hidden": "!data.airQualityEnabled",
+          "style": { "color": "grey", "paddingTop": "20px" }
         }
+      }
     }
+  }
 }

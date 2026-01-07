@@ -18,7 +18,7 @@ exports.fr = {
     "weather_text": "Texte météo",
     "icon_url": "URL de l'icône",
     "time": "Heure",
-    // Tägliche Vorhersage (Daily)
+    // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Température max",
     "temperature_2m_min": "Température min",
     "sunrise": "Lever du soleil",
@@ -26,6 +26,10 @@ exports.fr = {
     "sunshine_duration": "Durée d'ensoleillement",
     "uv_index_max": "Indice UV max",
     "rain_sum": "Cumul de pluie",
+    "rain": "Pluie",
+    "soil_temperature_0cm": "Température du sol (0cm)",
+    "snowfall": "Nieve",
+    "snow_depth": "Profondeur de neige",
     "snowfall_sum": "Cumul de neige",
     "precipitation_probability_max": "Probabilité de précipitations max",
     "wind_speed_10m_max": "Vitesse du vent max",

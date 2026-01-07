@@ -16,7 +16,7 @@ export const it = {
     "icon_url": "URL dell'icona",
     "time": "Ora",
 
-    // Tägliche Vorhersage (Daily)
+    // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Temperatura max",
     "temperature_2m_min": "Temperatura min",
     "sunrise": "Alba",
@@ -24,6 +24,10 @@ export const it = {
     "sunshine_duration": "Durata del sole",
     "uv_index_max": "Indice UV max",
     "rain_sum": "Somma pioggia",
+    "rain": "Pioggia",
+    "soil_temperature_0cm": "Temperatura del suolo (0cm)",
+    "snowfall": "Neve",
+    "snow_depth": "Profondità neve",
     "snowfall_sum": "Somma neve",
     "precipitation_probability_max": "Probabilità precipitazioni max",
     "wind_speed_10m_max": "Velocità del vento max",

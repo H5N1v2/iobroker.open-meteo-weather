@@ -16,7 +16,7 @@ export const ru = {
     "icon_url": "URL иконки",
     "time": "Время",
 
-    // Tägliche Vorhersage (Daily)
+    // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Макс. температура",
     "temperature_2m_min": "Мин. температура",
     "sunrise": "Восход солнца",
@@ -24,6 +24,10 @@ export const ru = {
     "sunshine_duration": "Продолжительность солнечного сияния",
     "uv_index_max": "Макс. УФ-индекс",
     "rain_sum": "Сумма осадков",
+    "rain": "Осадки",
+    "soil_temperature_0cm": "Температура почвы (0см)",
+    "snowfall": "Снегопад",
+    "snow_depth": "Глубина снега",
     "snowfall_sum": "Сумма снегопада",
     "precipitation_probability_max": "Макс. вероятность осадков",
     "wind_speed_10m_max": "Макс. скорость ветра",

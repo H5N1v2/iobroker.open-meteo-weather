@@ -16,7 +16,7 @@ export const zh = {
     "icon_url": "图标URL",
     "time": "时间",
 
-    // Tägliche Vorhersage (Daily)
+    // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "最高温度",
     "temperature_2m_min": "最低温度",
     "sunrise": "日出",
@@ -24,6 +24,10 @@ export const zh = {
     "sunshine_duration": "日照时长",
     "uv_index_max": "最高紫外线指数",
     "rain_sum": "总降雨量",
+    "rain": "雨量",
+    "soil_temperature_0cm": "土壤温度 (0厘米)",
+    "snowfall": "雪量",
+    "snow_depth": "雪深",
     "snowfall_sum": "总降雪量",
     "precipitation_probability_max": "最大降水概率",
     "wind_speed_10m_max": "最大风速",

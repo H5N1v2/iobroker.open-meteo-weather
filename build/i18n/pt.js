@@ -18,7 +18,7 @@ exports.pt = {
     "weather_text": "Texto do tempo",
     "icon_url": "URL do ícone",
     "time": "Hora",
-    // Tägliche Vorhersage (Daily)
+    // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Temperatura máx.",
     "temperature_2m_min": "Temperatura mín.",
     "sunrise": "Nascer do sol",
@@ -26,6 +26,10 @@ exports.pt = {
     "sunshine_duration": "Duração do sol",
     "uv_index_max": "Índice UV máx.",
     "rain_sum": "Soma de chuva",
+    "rain": "Chuva",
+    "soil_temperature_0cm": "Temperatura do solo (0cm)",
+    "snowfall": "Nevada",
+    "snow_depth": "Profundidade da neve",
     "snowfall_sum": "Soma de neve",
     "precipitation_probability_max": "Probabilidade de precipitação máx.",
     "wind_speed_10m_max": "Velocidade do vento máx.",

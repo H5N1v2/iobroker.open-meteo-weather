@@ -3,6 +3,7 @@ import axios from 'axios';
 import { weatherTranslations } from './lib/words';
 import { translations } from './i18n';
 
+// Die Hauptklasse des Adapters – hier wird alles gesteuert
 class OpenMeteoWeather extends utils.Adapter {
     private updateInterval: ioBroker.Interval | undefined = undefined;
     private systemLang: string = 'de';
@@ -14,13 +15,13 @@ class OpenMeteoWeather extends utils.Adapter {
         this.on('unload', this.onUnload.bind(this));
     }
 
-    // Lädt Übersetzungen für State-Namen aus der i18n
+    // Sucht die passende Übersetzung für Objektnamen (z.B. aus deiner i18n/de.json)
     private getTranslation(key: string): string {
         if (!translations) return key;
         return translations[this.systemLang]?.[key] || translations['en']?.[key] || key;
     }
 
-    // Wandelt Grad-Zahlen in Windrichtung (N, NO, etc.) um
+    // Berechnet aus der Gradzahl (0-360) die Windrichtung als Text (N, NW, etc.)
     private getWindDirection(deg: number): string {
         const t = weatherTranslations[this.systemLang] || weatherTranslations['de'];
         const directions = t.dirs || ["N", "NO", "O", "SO", "S", "SW", "W", "NW"];
@@ -28,7 +29,7 @@ class OpenMeteoWeather extends utils.Adapter {
         return directions[index];
     }
 
-    // Initialisierung: Lädt Systemeinstellungen, startet Cleanup und Interval
+    // Wird ausgeführt, wenn der Adapter startet: Lädt System-Infos und räumt auf
     private async onReady(): Promise<void> {
         try {
             const sysConfig = await this.getForeignObjectAsync('system.config');
@@ -36,47 +37,48 @@ class OpenMeteoWeather extends utils.Adapter {
                 this.systemLang = sysConfig.common.language || 'de';
                 this.systemTimeZone = (sysConfig.common as any).timezone || 'Europe/Berlin';
             }
-            await this.cleanupObjects();
+            await this.cleanupObjects(); // Räumt alte Datenpunkte sofort beim Start auf
         } catch (e) {
             this.log.error('Initialisierung fehlgeschlagen.');
         }
 
-        await this.updateData();
+        await this.updateData(); // Erster Datenabruf
         const config = this.config as any;
         const intervalMs = (parseInt(config.interval) || 30) * 60000;
         this.updateInterval = this.setInterval(() => this.updateData(), intervalMs);
     }
 
-    // Löscht deaktivierte AirQuality-Daten und überzählige Forecast-Tage
+    // Durchsucht alle Objekte und löscht die, die deaktiviert oder zu viel sind (Tage & Stunden)
     private async cleanupObjects(): Promise<void> {
         const config = this.config as any;
-        const maxDays = parseInt(config.forecastDays as any);
-
-        // Air Quality Cleanup
+        
         if (config.airQualityEnabled === false) {
             await this.delObjectAsync('air', { recursive: true });
         }
 
-        // Forecast Days Cleanup
         try {
             const allObjects = await this.getAdapterObjectsAsync();
             const allIds = Object.keys(allObjects);
+            const maxDays = parseInt(config.forecastDays as any) || 0;
+            const maxHours = parseInt(config.forecastHours as any) || 0;
+            const hoursEnabled = config.forecastHoursEnabled || false;
 
             for (const id of allIds) {
-                const match = id.match(/day(\d+)/);
-                if (match) {
-                    const dayNumber = parseInt(match[1]);
-                    if (dayNumber >= maxDays) {
-                        const relativeId = id.replace(`${this.namespace}.`, '');
-                        const pathParts = relativeId.split('.');
-                        const dayPartIndex = pathParts.findIndex(p => p.startsWith('day'));
-                        
-                        if (dayPartIndex !== -1) {
-                            const folderToDelete = pathParts.slice(0, dayPartIndex + 1).join('.');
-                            try {
-                                await this.delObjectAsync(folderToDelete, { recursive: true });
-                            } catch (e) {}
-                        }
+                const relativeId = id.replace(`${this.namespace}.`, '');
+                
+                // Prüft ob es ein "Tag"-Ordner ist und ob er gelöscht werden muss
+                const dayMatch = id.match(/day(\d+)/);
+                if (dayMatch && parseInt(dayMatch[1]) >= maxDays) {
+                    const folder = relativeId.split('.').slice(0, 3).join('.');
+                    await this.delObjectAsync(folder, { recursive: true });
+                }
+
+                // Prüft ob es ein "Stunden"-Ordner ist und ob er gelöscht werden muss
+                const hourMatch = id.match(/hour(\d+)/);
+                if (hourMatch) {
+                    if (!hoursEnabled || parseInt(hourMatch[1]) >= maxHours) {
+                        const folder = relativeId.split('.').slice(0, 3).join('.');
+                        await this.delObjectAsync(folder, { recursive: true });
                     }
                 }
             }
@@ -85,26 +87,34 @@ class OpenMeteoWeather extends utils.Adapter {
         }
     }
 
-    // Hauptfunktion zum Abrufen der Wetter- und Luftqualitätsdaten
+    // Abruf: Ruft alle aktivierten APIs auf
     private async updateData(): Promise<void> {
         try {
             const config = this.config as any;
             const lat = config.latitude;
             const lon = config.longitude;
             const fDays = config.forecastDays || 7;
-            const airQualityEnabled = config.airQualityEnabled || false;
+            const tz = encodeURIComponent(this.systemTimeZone);
 
             if (!lat || !lon) return;
 
-            const tz = encodeURIComponent(this.systemTimeZone);
+            // 1. Wetter-API (Aktuell & Tage)
             const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunshine_duration,sunset,uv_index_max,rain_sum,snowfall_sum,precipitation_probability_max,wind_speed_10m_max,wind_direction_10m_dominant,wind_gusts_10m_max,dew_point_2m_mean&timezone=${tz}&forecast_days=${fDays}`;
-            
             const resW = await axios.get(weatherUrl);
             if (resW.data) await this.processWeatherData(resW.data);
 
-            if (airQualityEnabled) {
-                const airQualityUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=european_aqi,pm10,pm2_5,alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,ragweed_pollen&timezone=${tz}&forecast_days=${fDays > 7 ? 7 : fDays}`;
-                const resA = await axios.get(airQualityUrl);
+            // 2. Stunden-Vorhersage-API (falls in Einstellungen aktiv)
+            if (config.forecastHoursEnabled) {
+                const fHours = config.forecastHours || 1;
+                const hourlyUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,precipitation_probability,rain,weather_code,surface_pressure,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,soil_temperature_0cm,uv_index,sunshine_duration,is_day,snowfall,snow_depth&timezone=${tz}&forecast_hours=${fHours}`;
+                const resH = await axios.get(hourlyUrl);
+                if (resH.data) await this.processForecastHoursData(resH.data);
+            }
+
+            // 3. Luftqualitäts-API (falls in Einstellungen aktiv)
+            if (config.airQualityEnabled) {
+                const airUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=european_aqi,pm10,pm2_5,alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,ragweed_pollen&timezone=${tz}&forecast_days=${fDays > 7 ? 7 : fDays}`;
+                const resA = await axios.get(airUrl);
                 if (resA.data) await this.processAirQualityData(resA.data);
             }
         } catch (error: any) {
@@ -112,7 +122,7 @@ class OpenMeteoWeather extends utils.Adapter {
         }
     }
 
-    // Verarbeitet Wetterdaten und erstellt die entsprechenden States
+    // Verarbeitet die JSON-Antwort der Wetter-API und erstellt/füllt die Datenpunkte
     private async processWeatherData(data: any): Promise<void> {
         const t = weatherTranslations[this.systemLang] || weatherTranslations['de'];
         if (data.current) {
@@ -129,25 +139,40 @@ class OpenMeteoWeather extends utils.Adapter {
                 }
             }
         }
-        if (data.daily && data.daily.time) {
-            for (let i = 0; i < data.daily.time.length; i++) {
+        if (data.daily) {
+            for (let i = 0; i < (data.daily.time?.length || 0); i++) {
                 const dayPath = `weather.forecast.day${i}`;
                 for (const key in data.daily) {
-                    let val = data.daily[key][i];
+                    const val = data.daily[key][i];
                     await this.extendOrCreateState(`${dayPath}.${key}`, val, key);
                     if (key === 'weather_code') {
                         await this.createCustomState(`${dayPath}.weather_text`, t.codes[val] || '?', 'string', 'text', '');
                         await this.createCustomState(`${dayPath}.icon_url`, `/adapter/${this.name}/icons/${val}.png`, 'string', 'url', '');
-                    }
-                    if (key === 'wind_direction_10m_dominant') {
-                        await this.createCustomState(`${dayPath}.wind_direction_text`, this.getWindDirection(val), 'string', 'text', '');
                     }
                 }
             }
         }
     }
 
-    // Verarbeitet Luftqualitätsdaten und Pollenwerte
+    // Erstellt Ordner hour0, hour1 etc.
+    private async processForecastHoursData(data: any): Promise<void> {
+        const t = weatherTranslations[this.systemLang] || weatherTranslations['de'];
+        if (data.hourly) {
+            for (const key in data.hourly) {
+                const values = data.hourly[key];
+                for (let i = 0; i < values.length; i++) {
+                    const hourPath = `weather.forecast.hour${i}`;
+                    await this.extendOrCreateState(`${hourPath}.${key}`, values[i], key);
+                    if (key === 'weather_code') {
+                        await this.createCustomState(`${hourPath}.weather_text`, t.codes[values[i]] || '?', 'string', 'text', '');
+                        await this.createCustomState(`${hourPath}.icon_url`, `/adapter/${this.name}/icons/${values[i]}.png`, 'string', 'url', '');
+                    }
+                }
+            }
+        }
+    }
+
+    // Verarbeitet Luftwerte und Pollen – wandelt Pollen-Zahlen in Texte um
     private async processAirQualityData(data: any): Promise<void> {
         const t = weatherTranslations[this.systemLang] || weatherTranslations['de'];
         if (data.current) {
@@ -155,17 +180,14 @@ class OpenMeteoWeather extends utils.Adapter {
                 await this.extendOrCreateState(`air.current.${key}`, data.current[key], key);
                 if (key.includes('pollen')) {
                     const val = data.current[key];
-                    let pollenText = t.pollen.none;
-                    if (val > 0 && val <= 1) pollenText = t.pollen.low;
-                    else if (val > 1 && val <= 2) pollenText = t.pollen.moderate;
-                    else if (val > 2) pollenText = t.pollen.high;
+                    const pollenText = val > 2 ? t.pollen.high : (val > 1 ? t.pollen.moderate : (val > 0 ? t.pollen.low : t.pollen.none));
                     await this.createCustomState(`air.current.${key}_text`, pollenText, 'string', 'text', '');
                 }
             }
         }
     }
 
-    // Erstellt manuelle States (z.B. Texte oder Icons)
+    // Helfer-Funktion: Erstellt einen Datenpunkt mit festen Eigenschaften (z.B. für Texte)
     private async createCustomState(id: string, val: any, type: ioBroker.CommonType, role: string, unit: string): Promise<void> {
         await this.setObjectNotExistsAsync(id, {
             type: 'state',
@@ -175,27 +197,38 @@ class OpenMeteoWeather extends utils.Adapter {
         await this.setStateAsync(id, { val, ack: true });
     }
 
-    // Erstellt oder aktualisiert automatische States inkl. Einheiten-Mapping
+    // Prüft IDs auf Schlüsselwörter und weist Einheiten (°C, %, hPa) zu
     private async extendOrCreateState(id: string, val: any, translationKey?: string): Promise<void> {
-        const unitMap: Record<string, string> = { 'temperature': '°C', 'humidity': '%', 'precipitation': 'mm', 'wind': 'km/h', 'pm': 'µg/m³', 'cloud': '%','wind_direction': '°', 'dew_point': '°C', 'apparent': '°C' };
+        const unitMap: Record<string, string> = { 
+            'temperature': '°C', 'humidity': '%', 'precipitation': 'mm', 'rain': 'mm',
+            'wind_speed': 'km/h', 'wind_gusts': 'km/h', 'pm': 'µg/m³', 'cloud': '%',
+            'wind_direction': '°', 'dew_point': '°C', 'pressure': 'hPa', 'sunshine': 's',
+            'snow_depth': 'm','snowfall': 'cm'
+        };
         let unit = '';
         for (const k in unitMap) { if (id.includes(k)) unit = unitMap[k]; }
+
         await this.setObjectNotExistsAsync(id, {
             type: 'state',
-            common: { name: this.getTranslation(translationKey || id.split('.').pop() || id), type: typeof val as any, role: 'value', read: true, write: false, unit },
+            common: { 
+                name: this.getTranslation(translationKey || id.split('.').pop() || id), 
+                type: typeof val as any, 
+                role: id.includes('uv_index') ? 'value.uv' : 'value', 
+                read: true, write: false, unit 
+            },
             native: {},
         });
         await this.setStateAsync(id, { val, ack: true });
     }
 
-    // Stoppt das Interval beim Beenden des Adapters
+    // Beendet den Adapter
     private onUnload(callback: () => void): void {
         if (this.updateInterval) this.clearInterval(this.updateInterval);
         callback();
     }
 }
 
-// Start der Instanz
+// Einstiegspunkt für ioBroker
 if (require.main !== module) {
     module.exports = (options: Partial<utils.AdapterOptions> | undefined) => new OpenMeteoWeather(options);
 } else {
