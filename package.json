@@ -1,7 +1,6 @@
-
 {
   "name": "iobroker.open-meteo-weather",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Get local weather, air quality and pollen data from Open-Meteo.com",
   "author": "H5N1v2 <h5n1@iknox.de>",
   "license": "MIT",
@@ -13,10 +12,10 @@
     "@iobroker/adapter-core": "^3.0.4",
     "axios": "^1.6.0"
   },
-"devDependencies": {
+  "devDependencies": {
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0",
-    "@iobroker/testing": "^4.1.0" 
+    "@iobroker/testing": "^4.1.0"
   },
   "main": "build/main.js",
   "scripts": {
