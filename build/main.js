@@ -303,10 +303,18 @@ class OpenMeteoWeather extends utils.Adapter {
         const t = words_1.weatherTranslations[this.systemLang] || words_1.weatherTranslations['de'];
         if (data.current) {
             for (const key in data.current) {
-                await this.extendOrCreateState(`air.current.${key}`, data.current[key], key);
+                let val = data.current[key];
+                if (key === 'time' && typeof val === 'string') {
+                    const dateObj = new Date(val);
+                    val = dateObj.toLocaleString(this.systemLang, {
+                        day: '2-digit', month: '2-digit', year: 'numeric',
+                        hour: '2-digit', minute: '2-digit', hour12: this.systemLang === 'en'
+                    });
+                }
+                await this.extendOrCreateState(`air.current.${key}`, val, key);
                 if (key.includes('pollen')) {
-                    const val = data.current[key];
-                    const pollenText = val > 2 ? t.pollen.high : (val > 1 ? t.pollen.moderate : (val > 0 ? t.pollen.low : t.pollen.none));
+                    const valPollen = data.current[key];
+                    const pollenText = valPollen > 2 ? t.pollen.high : (valPollen > 1 ? t.pollen.moderate : (valPollen > 0 ? t.pollen.low : t.pollen.none));
                     await this.createCustomState(`air.current.${key}_text`, pollenText, 'string', 'text', '');
                 }
             }
