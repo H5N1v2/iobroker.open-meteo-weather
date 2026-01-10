@@ -15,6 +15,10 @@ export const zh = {
     "weather_text": "天气文本",
     "icon_url": "图标URL",
     "time": "时间",
+    "pressure_msl": "表面压力",
+    "pressure_msl_mean": "平均表面压力",
+    "wind_gust_icon": "阵风图标",
+    "wind_direction_icon": "风向图标",
 
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "最高温度",
@@ -44,9 +48,9 @@ export const zh = {
     "grass_pollen": "草花粉",
     "mugwort_pollen": "艾蒿花粉",
     "ragweed_pollen": "豚草花粉",
-    "ragweed_pollen_text": "豚草花粉文本",
-    "mugwort_pollen_text": "艾蒿花粉文本",
-    "grass_pollen_text": "草花粉文本",
-    "birch_pollen_text": "桦树花粉文本",
-    "alder_pollen_text": "桤木花粉文本",
+    "ragweed_pollen_text": "豚草花粉过敏指数",
+    "mugwort_pollen_text": "艾草花粉过敏指数",
+    "grass_pollen_text": "牧草花粉过敏指数",
+    "birch_pollen_text": "桦树花粉过敏指数",
+    "alder_pollen_text": "赤杨花粉过敏指数"
 };

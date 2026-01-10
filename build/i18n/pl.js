@@ -18,6 +18,10 @@ exports.pl = {
     "weather_text": "Opis pogody",
     "icon_url": "URL ikony",
     "time": "Czas",
+    "pressure_msl": "Presione de la superficie",
+    "pressure_msl_mean": "Średnia presione de la superficie",
+    "wind_gust_icon": "Icono deráfagas de viento",
+    "wind_direction_icon": "Icono de la dirección del viento",
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Temperatura maksymalna",
     "temperature_2m_min": "Temperatura minimalna",
@@ -45,9 +49,9 @@ exports.pl = {
     "grass_pollen": "Pyłek traw",
     "mugwort_pollen": "Pyłek bylicy",
     "ragweed_pollen": "Pyłek ambrozji",
-    "ragweed_pollen_text": "Poziom pyłku ambrozji",
-    "mugwort_pollen_text": "Poziom pyłku bylicy",
-    "grass_pollen_text": "Poziom pyłku traw",
-    "birch_pollen_text": "Poziom pyłku brzozy",
-    "alder_pollen_text": "Poziom pyłku olchy"
+    "ragweed_pollen_text": "Stężenie pyłków ambrozji",
+    "mugwort_pollen_text": "Stężenie pyłków bylicy",
+    "grass_pollen_text": "Stężenie pyłków traw",
+    "birch_pollen_text": "Stężenie pyłków brzozy",
+    "alder_pollen_text": "Stężenie pyłków olchy"
 };

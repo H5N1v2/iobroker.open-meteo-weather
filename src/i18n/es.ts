@@ -15,6 +15,11 @@ export const es = {
     "weather_text": "Texto del tiempo",
     "icon_url": "URL del icono",
     "time": "Hora",
+    "pressure_msl": "Presión de la superficie",
+    "pressure_msl_mean": "Presión media de la superficie",
+    "wind_gust_icon": "Icono de ráfagas de viento",
+    "wind_direction_icon": "Icono de la dirección del viento",
+
 
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Temperatura máx.",
@@ -44,9 +49,9 @@ export const es = {
     "grass_pollen": "Polen de Gramíneas",
     "mugwort_pollen": "Polen de Artemisa",
     "ragweed_pollen": "Polen de Ambrosía",
-    "ragweed_pollen_text": "Nivel de polen de ambrosía",
-    "mugwort_pollen_text": "Nivel de polen de artemisa",
-    "grass_pollen_text": "Nivel de polen de gramíneas",
-    "birch_pollen_text": "Nivel de polen de abedul",
-    "alder_pollen_text": "Nivel de polen de aliso"
+    "ragweed_pollen_text": "Carga de polen de ambrosía",
+    "mugwort_pollen_text": "Carga de polen de artemisa",
+    "grass_pollen_text": "Carga de polen de gramíneas",
+    "birch_pollen_text": "Carga de polen de abedul",
+    "alder_pollen_text": "Carga de polen de aliso"
 };

@@ -1,4 +1,5 @@
 {
+    "koordinates_text": "Koordinaten finden mit openstreetmap",
     "settings_label": "Einstellungen",
     "location_header_text": "Standort-Koordinaten",
     "options_header_text": "Optionen",
@@ -10,15 +11,20 @@
     "days_7": "7 Tage",
     "days_14": "14 Tage",
     "days_16": "16 Tage",
-    "Hours_1": "1 Stunde",
-    "Hours_6": "6 Stunden",
-    "Hours_12": "12 Stunden",
-    "Hours_24": "24 Stunden",
+    "Hours_1": "1 Stunde (0.00 - 01.00 Uhr)->(hour0)",
+    "Hours_6": "6 Stunden (0.00 - 06.00 Uhr)->(hour0-5)",
+    "Hours_12": "12 Stunden (0.00 - 12.00 Uhr)->(hour0-11)",
+    "Hours_24": "24 Stunden (0.00 - 24.00 Uhr)->(hour0-23)",
     "forecastHours_label": "Vorhersage Sunden abrufen",
+    "unit_system_label": "Einheitensystem",
+    "metric_label": "Metrisch (°C, km/h, mm)",
+    "imperial_label": "Imperial (°F, mph, inch)",
     "latitude_label": "Breitengrad (Latitude)",
     "longitude_label": "Längengrad (Longitude)",
     "interval_label": "Update-Intervall",
     "forecastDays_label": "Anzahl der Tage für Vorhersage",
+    "forecastHoursEnabled_label": "Vorhersage für Stunden",
+    "forecastHoursEnabled_help": "(Achtung: Erstellt viele Datenpunkte! Dies kann die Systemlast und den Speicherverbrauch erhöhen.)",
     "airQualityEnabled_label": "Luftqualität & Pollen abrufen",
-    "descriptionText_text": "Dieser Adapter ruft aktuelle Wetterdaten, Vorhersagen sowie Pollenflug- und Luftqualitätsdaten ab."
+    "descriptionText_text": "Dieser Adapter ruft aktuelle Wetterdaten, Vorhersagen sowie Pollenflug- und Luftqualitätsdaten ab\nKoordinaten können auf https://www.openstreetmap.org abgerufen werden."
 }

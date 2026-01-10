@@ -15,6 +15,10 @@ export const fr = {
     "weather_text": "Texte météo",
     "icon_url": "URL de l'icône",
     "time": "Heure",
+    "pressure_msl": "Pression de surface",
+    "pressure_msl_mean": "Pression de surface moyenne",
+    "wind_gust_icon": "Rafales de vent icône",
+    "wind_direction_icon": "Direction du vent icône",
 
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Température max",
@@ -44,9 +48,9 @@ export const fr = {
     "grass_pollen": "Polen d'Herbe",
     "mugwort_pollen": "Polen de Mugwort",
     "ragweed_pollen": "Polen de Ambrosia",
-    "ragweed_pollen_text": "Niveau de polen d'ambrosia",
-    "mugwort_pollen_text": "Niveau de polen de mugwort",
-    "grass_pollen_text": "Niveau de polen d'herbe",
-    "birch_pollen_text": "Niveau de polen de bouleau",
-    "alder_pollen_text": "Niveau de polen d'alisier"
+    "ragweed_pollen_text": "Charge de pollen d'ambroisie",
+    "mugwort_pollen_text": "Charge de pollen d'armoise",
+    "grass_pollen_text": "Charge de pollen de graminées",
+    "birch_pollen_text": "Charge de pollen de bouleau",
+    "alder_pollen_text": "Charge de pollen d'aulne"
 };

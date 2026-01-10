@@ -15,6 +15,10 @@ export const de = {
     "weather_text": "Wetter Text",
     "icon_url": "Icon URL",
     "time": "Zeit",
+    "pressure_msl": "Luftdruck",
+    "pressure_msl_mean": "Durchschnittlicher Luftdruck",
+    "wind_gust_icon": "Windböen Icon",
+    "wind_direction_icon": "Windrichtung Icon",
     
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Max. Temperatur",
@@ -44,9 +48,9 @@ export const de = {
     "grass_pollen": "Graspollen",
     "mugwort_pollen": "Beifußpollen",
     "ragweed_pollen": "Ambrosiapollen",
-    "ragweed_pollen_text": "Ambrosiapollen Text",
-    "mugwort_pollen_text": "Beifußpollen Text",
-    "grass_pollen_text": "Graspollen Text",
-    "birch_pollen_text": "Birkenpollen Text",
-    "alder_pollen_text": "Erlenpollen Text"
+    "ragweed_pollen_text": "Ambrosiapollen Belastung",
+    "mugwort_pollen_text": "Beifußpollen Belasung",
+    "grass_pollen_text": "Graspollen Belastung",
+    "birch_pollen_text": "Birkenpollen Belastung",
+    "alder_pollen_text": "Erlenpollen Belastung"
 };

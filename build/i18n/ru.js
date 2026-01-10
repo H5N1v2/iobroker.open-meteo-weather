@@ -18,6 +18,10 @@ exports.ru = {
     "weather_text": "Текст погоды",
     "icon_url": "URL иконки",
     "time": "Время",
+    "pressure_msl": "Давление на поверхности",
+    "pressure_msl_mean": "Среднее давление на поверхности",
+    "wind_gust_icon": "Иконка порывов ветра",
+    "wind_direction_icon": "Иконка направления ветра",
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Макс. температура",
     "temperature_2m_min": "Мин. температура",
@@ -44,10 +48,9 @@ exports.ru = {
     "birch_pollen": "Пыльца березы",
     "grass_pollen": "Пыльца травы",
     "mugwort_pollen": "Пыльца полыни",
-    "ragweed_pollen": "Пыльца амброзии",
-    "ragweed_pollen_text": "Текст пыльцы амброзии",
-    "mugwort_pollen_text": "Текст пыльцы полыни",
-    "grass_pollen_text": "Текст пыльцы травы",
-    "birch_pollen_text": "Текст пыльцы березы",
-    "alder_pollen_text": "Текст пыльцы ольхи"
+    "ragweed_pollen_text": "Концентрация пыльцы амброзии",
+    "mugwort_pollen_text": "Концентрация пыльцы полыни",
+    "grass_pollen_text": "Концентрация пыльцы злаковых трав",
+    "birch_pollen_text": "Концентрация пыльцы берёзы",
+    "alder_pollen_text": "Концентрация пыльцы ольхи"
 };

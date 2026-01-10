@@ -18,6 +18,10 @@ exports.pt = {
     "weather_text": "Texto do tempo",
     "icon_url": "URL do ícone",
     "time": "Hora",
+    "pressure_msl": "Presão da superficie",
+    "pressure_msl_mean": "Presão media da superficie",
+    "wind_gust_icon": "Icono de rajadas de vento",
+    "wind_direction_icon": "Icono da direção do vento",
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Temperatura máx.",
     "temperature_2m_min": "Temperatura mín.",
@@ -45,9 +49,9 @@ exports.pt = {
     "grass_pollen": "Pólen de Gramíneas",
     "mugwort_pollen": "Pólen de Artemísia",
     "ragweed_pollen": "Pólen de Ambrósia",
-    "ragweed_pollen_text": "Nível de pólen de ambrósia",
-    "mugwort_pollen_text": "Nível de pólen de artemísia",
-    "grass_pollen_text": "Nível de pólen de gramíneas",
-    "birch_pollen_text": "Nível de pólen de bétula",
-    "alder_pollen_text": "Nível de pólen de alno"
+    "ragweed_pollen_text": "Carga de pólen de ambrósia",
+    "mugwort_pollen_text": "Carga de pólen de artemísia",
+    "grass_pollen_text": "Carga de pólen de gramíneas",
+    "birch_pollen_text": "Carga de pólen de bétula",
+    "alder_pollen_text": "Carga de pólen de aliso"
 };

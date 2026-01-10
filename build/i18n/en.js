@@ -18,6 +18,10 @@ exports.en = {
     "weather_text": "Weather Text",
     "icon_url": "Icon URL",
     "time": "Time",
+    "pressure_msl": "Surface Pressure",
+    "pressure_msl_mean": "Mean Surface Pressure",
+    "wind_gust_icon": "Wind Gust Icon",
+    "wind_direction_icon": "Wind Direction Icon",
     // Tägliche Vorhersage (Daily&Hourly)
     "temperature_2m_max": "Max. Temperature",
     "temperature_2m_min": "Min. Temperature",
@@ -45,9 +49,9 @@ exports.en = {
     "grass_pollen": "Grass Pollen",
     "mugwort_pollen": "Mugwort Pollen",
     "ragweed_pollen": "Ragweed Pollen",
-    "ragweed_pollen_text": "Ragweed Pollen Text",
-    "mugwort_pollen_text": "Mugwort Pollen Text",
-    "grass_pollen_text": "Grass Pollen Text",
-    "birch_pollen_text": "Birch Pollen Text",
-    "alder_pollen_text": "Alder Pollen Text"
+    "ragweed_pollen_text": "Ragweed pollen levels",
+    "mugwort_pollen_text": "Mugwort pollen levels",
+    "grass_pollen_text": "Grass pollen levels",
+    "birch_pollen_text": "Birch pollen levels",
+    "alder_pollen_text": "Alder pollen levels"
 };

@@ -6,7 +6,7 @@
       "type": "panel",
       "label": "settings_label",
       "items": {
-        // Logo und Beschreibung
+        // --- HEADER BEREICH ---
         "headerPanel": {
           "type": "panel",
           "sm": 12,
@@ -14,46 +14,53 @@
             "icontest": {
               "type": "staticImage",
               "src": "open-meteo.png",
-              "sm": 2
+              "xs": 12, "sm": 3, "md": 2, "lg": 2
             },
             "descriptionText": {
               "type": "staticText",
               "text": "descriptionText_text",
-              "style": {
-                "fontStyle": "italic"
-              },
-              "sm": 10
+              "style": { "fontStyle": "italic" },
+              "xs": 12, "sm": 9, "md": 10, "lg": 10
             }
           }
         },
+
+        // --- STANDORT BEREICH ---
         "locationLabel": {
           "type": "header",
           "text": "location_header_text",
           "size": 5,
-          "sm": 12
+          "xs": 12
         },
-        // Koordinaten nebeneinander
         "latitude": {
           "type": "number",
           "label": "latitude_label",
-          "sm": 6
+          "xs": 12, "sm": 6, "md": 4, "lg": 3
         },
         "longitude": {
           "type": "number",
           "label": "longitude_label",
-          "sm": 6
+          "xs": 12, "sm": 6, "md": 4, "lg": 3
         },
-        "divider1": {
-          "type": "divider",
-          "sm": 12
+        "meteoredURL": {
+          "type": "staticLink",
+          "text": "koordinates_text",
+          "href": "https://www.openstreetmap.org",
+          "button": true,
+          "color": "secondary",
+          "icon": "info",
+          "xs": 12, "sm": 12, "md": 4, "lg": 3
         },
+
+        "divider1": { "type": "divider", "xs": 12 },
+
+        // --- OPTIONEN BEREICH ---
         "options_header": {
           "type": "header",
           "text": "options_header_text",
           "size": 5,
-          "sm": 12
+          "xs": 12
         },
-        // Abrufintervall (Alleine in einer Zeile)
         "updateInterval": {
           "type": "select",
           "label": "interval_label",
@@ -63,11 +70,8 @@
             { "value": 30, "label": "interval_30_min" },
             { "value": 60, "label": "interval_60_min" }
           ],
-          "sm": 4 // Nimmt nur ein Drittel ein, sieht sauberer aus
+          "xs": 12, "sm": 6, "md": 4, "lg": 3
         },
-        "newLine1": { "type": "staticText", "text": "", "sm": 8 }, // Platzhalter für Rest der Zeile
-        
-        // Tägliche Vorhersage
         "forecastDays": {
           "type": "select",
           "label": "forecastDays_label",
@@ -79,19 +83,28 @@
             { "value": 14, "label": "days_14" },
             { "value": 16, "label": "days_16" }
           ],
-          "sm": 4,
-          "newLine": true
+          "xs": 12, "sm": 6, "md": 4, "lg": 3
+        },
+        "isImperial": {
+            "type": "select",
+            "label": "unit_system_label",
+            "default": false,
+            "options": [
+                { "value": false, "label": "metric_label" }, // °C, km/h, mm
+                { "value": true, "label": "imperial_label" } // °F, mph, inch
+            ],
+            "xs": 12, "sm": 6, "md": 4, "lg": 3
         },
 
-        "divider2": { "type": "divider", "sm": 12 },
+        "divider2": { "type": "divider", "xs": 12 },
 
-        // Sektion: Stündliche Vorhersage (Checkbox VOR Auswahl)
+        // --- STÜNDLICHE VORHERSAGE ---
         "forecastHoursEnabled": {
           "type": "checkbox",
           "label": "forecastHoursEnabled_label",
+          "help": "forecastHoursEnabled_help",
           "default": false,
-          "sm": 3,
-          "newLine": true
+          "xs": 12, "sm": 6, "md": 4, "lg": 3
         },
         "forecastHours": {
           "type": "select",
@@ -103,24 +116,26 @@
             { "value": 12, "label": "Hours_12" },
             { "value": 24, "label": "Hours_24" }
           ],
-          "sm": 4,
-          "hidden": "!data.forecastHoursEnabled" // Wird nur angezeigt, wenn Checkbox aktiv ist
+          "xs": 12, "sm": 6, "md": 4, "lg": 3,
+          "hidden": "!data.forecastHoursEnabled"
         },
 
-        // Sektion: Luftqualität
+        "divider3": { "type": "divider", "xs": 12, "hidden": "!data.airQualityEnabled" },
+
+        // --- LUFTQUALITÄT ---
         "airQualityEnabled": {
           "type": "checkbox",
           "label": "airQualityEnabled_label",
           "default": false,
-          "sm": 3,
+          "xs": 12, "sm": 6, "md": 4, "lg": 3,
           "newLine": true
         },
         "airQualityHint": {
           "type": "staticText",
           "text": "Aktiviert zusätzliche Luftqualitätsdaten",
-          "sm": 6,
+          "xs": 12, "sm": 6, "md": 8, "lg": 9,
           "hidden": "!data.airQualityEnabled",
-          "style": { "color": "grey", "paddingTop": "20px" }
+          "style": { "color": "grey", "paddingTop": "15px" }
         }
       }
     }
