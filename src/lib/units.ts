@@ -1,15 +1,35 @@
 // ./lib/units.ts
 
-export const unitMapMetric: Record<string, string> = { 
-    'temperature': '°C', 'humidity': '%', 'precipitation': '%', 'rain': 'mm',
-    'wind_speed': 'km/h', 'wind_gusts': 'km/h', 'pm': 'µg/m³', 'cloud': '%',
-    'wind_direction': '°', 'dew_point': '°C', 'pressure': 'hPa', 'sunshine': 'h',
-    'snowfall': 'cm', 'snow_depth': 'cm'
+export const unitMapMetric: Record<string, string> = {
+	temperature: '°C',
+	humidity: '%',
+	precipitation: '%',
+	rain: 'mm',
+	wind_speed: 'km/h',
+	wind_gusts: 'km/h',
+	pm: 'µg/m³',
+	cloud: '%',
+	wind_direction: '°',
+	dew_point: '°C',
+	pressure: 'hPa',
+	sunshine: 'h',
+	snowfall: 'cm',
+	snow_depth: 'cm',
 };
 
-export const unitMapImperial: Record<string, string> = { 
-    'temperature': '°F', 'humidity': '%', 'precipitation': '%', 'rain': 'inch',
-    'wind_speed': 'mph', 'wind_gusts': 'mph', 'pm': 'µg/m³', 'cloud': '%',
-    'wind_direction': '°', 'dew_point': '°F', 'pressure': 'inHg', 'sunshine': 'h',
-    'snowfall': 'inch', 'snow_depth': 'inch'
+export const unitMapImperial: Record<string, string> = {
+	temperature: '°F',
+	humidity: '%',
+	precipitation: '%',
+	rain: 'inch',
+	wind_speed: 'mph',
+	wind_gusts: 'mph',
+	pm: 'µg/m³',
+	cloud: '%',
+	wind_direction: '°',
+	dew_point: '°F',
+	pressure: 'inHg',
+	sunshine: 'h',
+	snowfall: 'inch',
+	snow_depth: 'inch',
 };

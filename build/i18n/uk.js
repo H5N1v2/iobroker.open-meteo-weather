@@ -1,57 +1,82 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.uk = void 0;
-exports.uk = {
-    // Aktuelle Werte (Current)
-    "temperature_2m": "Температура (2м)",
-    "relative_humidity_2m": "Відносна вологість (2м)",
-    "apparent_temperature": "Відчувається як",
-    "precipitation": "Опади",
-    "weather_code": "Код погоди",
-    "cloud_cover": "Хмарність",
-    "wind_speed_10m": "Швидкість вітру (10м)",
-    "wind_direction_10m": "Напрямок вітру (10м)",
-    "wind_gusts_10m": "Пориви вітру (10м)",
-    "is_day": "День/Ніч",
-    "dew_point_2m": "Точка роси (2м)",
-    "wind_direction_text": "Напрямок вітру (текст)",
-    "weather_text": "Опис погоди",
-    "icon_url": "URL іконки",
-    "time": "Час",
-    "pressure_msl": "Атмосферний тиск",
-    "pressure_msl_mean": "Середній атмосферний тиск",
-    "wind_gust_icon": "Іконка поривів вітру",
-    "wind_direction_icon": "Іконка напрямку вітру",
-    // Tägliche Vorhersage (Daily&Hourly)
-    "temperature_2m_max": "Макс. температура",
-    "temperature_2m_min": "Мін. температура",
-    "sunrise": "Схід сонця",
-    "sunset": "Захід сонця",
-    "sunshine_duration": "Тривалість сонячного сяйва",
-    "uv_index_max": "Макс. УФ-індекс",
-    "rain_sum": "Сума опадів (дощ)",
-    "rain": "Дощ",
-    "soil_temperature_0cm": "Температура ґрунту (0см)",
-    "snowfall": "Снігопад",
-    "snow_depth": "Висота снігового покриву",
-    "snowfall_sum": "Загальна кількість снігу",
-    "precipitation_probability_max": "Макс. ймовірність опадів",
-    "wind_speed_10m_max": "Макс. швидкість вітру",
-    "wind_direction_10m_dominant": "Переважаючий напрямок вітру",
-    "wind_gusts_10m_max": "Макс. пориви вітру",
-    "dew_point_2m_mean": "Середня точка роси (2м)",
-    // Luftqualität (Air Quality)
-    "european_aqi": "Європейський індекс якості повітря",
-    "pm10": "Пил PM10",
-    "pm2_5": "Пил PM2.5",
-    "alder_pollen": "Пилок вільхи",
-    "birch_pollen": "Пилок берези",
-    "grass_pollen": "Пилок трав",
-    "mugwort_pollen": "Пилок полину",
-    "ragweed_pollen": "Пилок амброзії",
-    "ragweed_pollen_text": "Рівень пилку амброзії",
-    "mugwort_pollen_text": "Рівень пилку полину",
-    "grass_pollen_text": "Рівень пилку трав",
-    "birch_pollen_text": "Рівень пилку берези",
-    "alder_pollen_text": "Рівень пилку вільхи"
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var uk_exports = {};
+__export(uk_exports, {
+  uk: () => uk
+});
+module.exports = __toCommonJS(uk_exports);
+const uk = {
+  // Aktuelle Werte (Current)
+  temperature_2m: "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430 (2\u043C)",
+  relative_humidity_2m: "\u0412\u0456\u0434\u043D\u043E\u0441\u043D\u0430 \u0432\u043E\u043B\u043E\u0433\u0456\u0441\u0442\u044C (2\u043C)",
+  apparent_temperature: "\u0412\u0456\u0434\u0447\u0443\u0432\u0430\u0454\u0442\u044C\u0441\u044F \u044F\u043A",
+  precipitation: "\u041E\u043F\u0430\u0434\u0438",
+  weather_code: "\u041A\u043E\u0434 \u043F\u043E\u0433\u043E\u0434\u0438",
+  cloud_cover: "\u0425\u043C\u0430\u0440\u043D\u0456\u0441\u0442\u044C",
+  wind_speed_10m: "\u0428\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C \u0432\u0456\u0442\u0440\u0443 (10\u043C)",
+  wind_direction_10m: "\u041D\u0430\u043F\u0440\u044F\u043C\u043E\u043A \u0432\u0456\u0442\u0440\u0443 (10\u043C)",
+  wind_gusts_10m: "\u041F\u043E\u0440\u0438\u0432\u0438 \u0432\u0456\u0442\u0440\u0443 (10\u043C)",
+  is_day: "\u0414\u0435\u043D\u044C/\u041D\u0456\u0447",
+  dew_point_2m: "\u0422\u043E\u0447\u043A\u0430 \u0440\u043E\u0441\u0438 (2\u043C)",
+  wind_direction_text: "\u041D\u0430\u043F\u0440\u044F\u043C\u043E\u043A \u0432\u0456\u0442\u0440\u0443 (\u0442\u0435\u043A\u0441\u0442)",
+  weather_text: "\u041E\u043F\u0438\u0441 \u043F\u043E\u0433\u043E\u0434\u0438",
+  icon_url: "URL \u0456\u043A\u043E\u043D\u043A\u0438",
+  time: "\u0427\u0430\u0441",
+  pressure_msl: "\u0410\u0442\u043C\u043E\u0441\u0444\u0435\u0440\u043D\u0438\u0439 \u0442\u0438\u0441\u043A",
+  pressure_msl_mean: "\u0421\u0435\u0440\u0435\u0434\u043D\u0456\u0439 \u0430\u0442\u043C\u043E\u0441\u0444\u0435\u0440\u043D\u0438\u0439 \u0442\u0438\u0441\u043A",
+  wind_gust_icon: "\u0406\u043A\u043E\u043D\u043A\u0430 \u043F\u043E\u0440\u0438\u0432\u0456\u0432 \u0432\u0456\u0442\u0440\u0443",
+  wind_direction_icon: "\u0406\u043A\u043E\u043D\u043A\u0430 \u043D\u0430\u043F\u0440\u044F\u043C\u043A\u0443 \u0432\u0456\u0442\u0440\u0443",
+  // Tägliche Vorhersage (Daily&Hourly)
+  temperature_2m_max: "\u041C\u0430\u043A\u0441. \u0442\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+  temperature_2m_min: "\u041C\u0456\u043D. \u0442\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+  sunrise: "\u0421\u0445\u0456\u0434 \u0441\u043E\u043D\u0446\u044F",
+  sunset: "\u0417\u0430\u0445\u0456\u0434 \u0441\u043E\u043D\u0446\u044F",
+  sunshine_duration: "\u0422\u0440\u0438\u0432\u0430\u043B\u0456\u0441\u0442\u044C \u0441\u043E\u043D\u044F\u0447\u043D\u043E\u0433\u043E \u0441\u044F\u0439\u0432\u0430",
+  uv_index_max: "\u041C\u0430\u043A\u0441. \u0423\u0424-\u0456\u043D\u0434\u0435\u043A\u0441",
+  rain_sum: "\u0421\u0443\u043C\u0430 \u043E\u043F\u0430\u0434\u0456\u0432 (\u0434\u043E\u0449)",
+  rain: "\u0414\u043E\u0449",
+  soil_temperature_0cm: "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0491\u0440\u0443\u043D\u0442\u0443 (0\u0441\u043C)",
+  snowfall: "\u0421\u043D\u0456\u0433\u043E\u043F\u0430\u0434",
+  snow_depth: "\u0412\u0438\u0441\u043E\u0442\u0430 \u0441\u043D\u0456\u0433\u043E\u0432\u043E\u0433\u043E \u043F\u043E\u043A\u0440\u0438\u0432\u0443",
+  snowfall_sum: "\u0417\u0430\u0433\u0430\u043B\u044C\u043D\u0430 \u043A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0441\u043D\u0456\u0433\u0443",
+  precipitation_probability_max: "\u041C\u0430\u043A\u0441. \u0439\u043C\u043E\u0432\u0456\u0440\u043D\u0456\u0441\u0442\u044C \u043E\u043F\u0430\u0434\u0456\u0432",
+  wind_speed_10m_max: "\u041C\u0430\u043A\u0441. \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C \u0432\u0456\u0442\u0440\u0443",
+  wind_direction_10m_dominant: "\u041F\u0435\u0440\u0435\u0432\u0430\u0436\u0430\u044E\u0447\u0438\u0439 \u043D\u0430\u043F\u0440\u044F\u043C\u043E\u043A \u0432\u0456\u0442\u0440\u0443",
+  wind_gusts_10m_max: "\u041C\u0430\u043A\u0441. \u043F\u043E\u0440\u0438\u0432\u0438 \u0432\u0456\u0442\u0440\u0443",
+  dew_point_2m_mean: "\u0421\u0435\u0440\u0435\u0434\u043D\u044F \u0442\u043E\u0447\u043A\u0430 \u0440\u043E\u0441\u0438 (2\u043C)",
+  // Luftqualität (Air Quality)
+  european_aqi: "\u0404\u0432\u0440\u043E\u043F\u0435\u0439\u0441\u044C\u043A\u0438\u0439 \u0456\u043D\u0434\u0435\u043A\u0441 \u044F\u043A\u043E\u0441\u0442\u0456 \u043F\u043E\u0432\u0456\u0442\u0440\u044F",
+  pm10: "\u041F\u0438\u043B PM10",
+  pm2_5: "\u041F\u0438\u043B PM2.5",
+  alder_pollen: "\u041F\u0438\u043B\u043E\u043A \u0432\u0456\u043B\u044C\u0445\u0438",
+  birch_pollen: "\u041F\u0438\u043B\u043E\u043A \u0431\u0435\u0440\u0435\u0437\u0438",
+  grass_pollen: "\u041F\u0438\u043B\u043E\u043A \u0442\u0440\u0430\u0432",
+  mugwort_pollen: "\u041F\u0438\u043B\u043E\u043A \u043F\u043E\u043B\u0438\u043D\u0443",
+  ragweed_pollen: "\u041F\u0438\u043B\u043E\u043A \u0430\u043C\u0431\u0440\u043E\u0437\u0456\u0457",
+  ragweed_pollen_text: "\u0420\u0456\u0432\u0435\u043D\u044C \u043F\u0438\u043B\u043A\u0443 \u0430\u043C\u0431\u0440\u043E\u0437\u0456\u0457",
+  mugwort_pollen_text: "\u0420\u0456\u0432\u0435\u043D\u044C \u043F\u0438\u043B\u043A\u0443 \u043F\u043E\u043B\u0438\u043D\u0443",
+  grass_pollen_text: "\u0420\u0456\u0432\u0435\u043D\u044C \u043F\u0438\u043B\u043A\u0443 \u0442\u0440\u0430\u0432",
+  birch_pollen_text: "\u0420\u0456\u0432\u0435\u043D\u044C \u043F\u0438\u043B\u043A\u0443 \u0431\u0435\u0440\u0435\u0437\u0438",
+  alder_pollen_text: "\u0420\u0456\u0432\u0435\u043D\u044C \u043F\u0438\u043B\u043A\u0443 \u0432\u0456\u043B\u044C\u0445\u0438"
+};
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  uk
+});
+//# sourceMappingURL=uk.js.map

@@ -1,3 +1,4 @@
+![Logo](admin/open-meteo.png)
 # ioBroker.open-meteo-weather
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.open-meteo-weather.svg)](https://www.npmjs.com/package/iobroker.open-meteo-weather)
@@ -54,6 +55,15 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 | `air.current` | Air quality and pollen levels as text and value |
 
 ---
+## Change Log
+
+### 1.2.0
+* Updated internal project structure to latest standards; improved code stability and maintenance.
+### 1.1.0
+* Initial NPM release
+* fix for air quality timestamps
+* added icons for wind direction and storm warnings
+* add some translations
 
 ## Legal & Copyright
 

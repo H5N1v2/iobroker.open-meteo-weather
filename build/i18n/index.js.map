@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/i18n/index.ts"],
+  "sourcesContent": ["// src/lib/i18n/index.ts\n\nimport { de } from './de';\nimport { en } from './en';\nimport { pl } from './pl';\nimport { ru } from './ru';\nimport { it } from './it';\nimport { es } from './es';\nimport { zh } from './zh';\nimport { fr } from './fr';\nimport { pt } from './pt';\nimport { nl } from './nl';\nimport { uk } from './uk';\n\n/**\n * Zentrales \u00DCbersetzungsobjekt f\u00FCr Datenpunkte\n * Struktur: translations[Sprachcode][DatenpunktKey]\n */\nexport const translations: Record<string, Record<string, string>> = {\n\tde,\n\ten,\n\tpl,\n\tru,\n\tit,\n\tes,\n\t'zh-cn': zh,\n\tfr,\n\tpt,\n\tnl,\n\tuk,\n};\n\n/**\n * Hilfsfunktion f\u00FCr die Verwendung in der main.ts\n *\n * @param key Der Key aus den Sprachdateien (z.B. 'temperature_2m')\n * @param lang Der aktuelle Sprachcode des ioBroker Systems\n */\nexport function getI18nName(key: string, lang: string = 'en'): string {\n\treturn translations[lang]?.[key] || translations.en?.[key] || key;\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAEA,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AACnB,gBAAmB;AAMZ,MAAM,eAAuD;AAAA,EACnE;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA,SAAS;AAAA,EACT;AAAA,EACA;AAAA,EACA;AAAA,EACA;AACD;AAQO,SAAS,YAAY,KAAa,OAAe,MAAc;AAtCtE;AAuCC,WAAO,kBAAa,IAAI,MAAjB,mBAAqB,WAAQ,kBAAa,OAAb,mBAAkB,SAAQ;AAC/D;",
+  "names": []
+}

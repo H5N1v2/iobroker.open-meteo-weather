@@ -1,0 +1,44 @@
+{
+	"cli": true,
+	"target": "directory",
+	"adapterName": "open-meteo-weather",
+	"title": "Open-Meteo Weather Service",
+	"description": "Get local weather, air quality and pollen data from Open-Meteo.com",
+	"keywords": [
+      "weather",
+      "forecast",
+      "open-meteo",
+      "pollen",
+      "air quality"
+	],
+	"expert": "no",
+	"features": [
+		"adapter"
+	],
+	"adminFeatures": [],
+	"type": "weather",
+	"startMode": "daemon",
+	"connectionType": "cloud",
+	"dataSource": "poll",
+	"connectionIndicator": "no",
+	"language": "TypeScript",
+	"nodeVersion": "20",
+	"adminUi": "json",
+	"tools": [
+		"ESLint"
+	],
+	"eslintConfig": "official",
+	"releaseScript": "yes",
+	"devServer": "local",
+	"indentation": "Tab",
+	"quotes": "single",
+	"authorName": "H5N1",
+	"authorGithub": "H5N1v2",
+	"authorEmail": "h5n1@iknox.de",
+	"gitRemoteProtocol": "HTTPS",
+	"gitCommit": "no",
+	"defaultBranch": "main",
+	"license": "MIT License",
+	"dependabot": "yes",
+	"creatorVersion": "3.1.2"
+}

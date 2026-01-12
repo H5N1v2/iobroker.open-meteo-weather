@@ -1,57 +1,82 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.de = void 0;
-exports.de = {
-    // Aktuelle Werte (Current)
-    "temperature_2m": "Temperatur (2m)",
-    "relative_humidity_2m": "Relative Luftfeuchtigkeit (2m)",
-    "apparent_temperature": "Gefühlte Temperatur",
-    "precipitation": "Niederschlag",
-    "weather_code": "Wetter-Code",
-    "cloud_cover": "Bewölkung",
-    "wind_speed_10m": "Windgeschwindigkeit (10m)",
-    "wind_direction_10m": "Windrichtung (10m)",
-    "wind_gusts_10m": "Windböen (10m)",
-    "is_day": "Tag/Nacht",
-    "dew_point_2m": "Taupunkt (2m)",
-    "wind_direction_text": "Windrichtung Text",
-    "weather_text": "Wetter Text",
-    "icon_url": "Icon URL",
-    "time": "Zeit",
-    "pressure_msl": "Luftdruck",
-    "pressure_msl_mean": "Durchschnittlicher Luftdruck",
-    "wind_gust_icon": "Windböen Icon",
-    "wind_direction_icon": "Windrichtung Icon",
-    // Tägliche Vorhersage (Daily&Hourly)
-    "temperature_2m_max": "Max. Temperatur",
-    "temperature_2m_min": "Min. Temperatur",
-    "sunrise": "Sonnenaufgang",
-    "sunset": "Sonnenuntergang",
-    "sunshine_duration": "Sonnenscheindauer",
-    "uv_index_max": "Max. UV-Index",
-    "rain_sum": "Regensumme",
-    "rain": "Regen",
-    "soil_temperature_0cm": "Boden-Temperatur (0cm)",
-    "snowfall": "Schneefall",
-    "snow_depth": "Schneehoehe",
-    "snowfall_sum": "Schneefallsumme",
-    "precipitation_probability_max": "Max. Niederschlagswahrscheinlichkeit",
-    "wind_speed_10m_max": "Max. Windgeschwindigkeit",
-    "wind_direction_10m_dominant": "Vorherrschende Windrichtung",
-    "wind_gusts_10m_max": "Max. Windböen",
-    "dew_point_2m_mean": "Durchschnittlicher Taupunkt (2m)",
-    // Luftqualität (Air Quality)
-    "european_aqi": "Europäischer Luftqualitätsindex",
-    "pm10": "Feinstaub PM10",
-    "pm2_5": "Feinstaub PM2.5",
-    "alder_pollen": "Erlenpollen",
-    "birch_pollen": "Birkenpollen",
-    "grass_pollen": "Graspollen",
-    "mugwort_pollen": "Beifußpollen",
-    "ragweed_pollen": "Ambrosiapollen",
-    "ragweed_pollen_text": "Ambrosiapollen Belastung",
-    "mugwort_pollen_text": "Beifußpollen Belasung",
-    "grass_pollen_text": "Graspollen Belastung",
-    "birch_pollen_text": "Birkenpollen Belastung",
-    "alder_pollen_text": "Erlenpollen Belastung"
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var de_exports = {};
+__export(de_exports, {
+  de: () => de
+});
+module.exports = __toCommonJS(de_exports);
+const de = {
+  // Aktuelle Werte (Current)
+  temperature_2m: "Temperatur (2m)",
+  relative_humidity_2m: "Relative Luftfeuchtigkeit (2m)",
+  apparent_temperature: "Gef\xFChlte Temperatur",
+  precipitation: "Niederschlag",
+  weather_code: "Wetter-Code",
+  cloud_cover: "Bew\xF6lkung",
+  wind_speed_10m: "Windgeschwindigkeit (10m)",
+  wind_direction_10m: "Windrichtung (10m)",
+  wind_gusts_10m: "Windb\xF6en (10m)",
+  is_day: "Tag/Nacht",
+  dew_point_2m: "Taupunkt (2m)",
+  wind_direction_text: "Windrichtung Text",
+  weather_text: "Wetter Text",
+  icon_url: "Icon URL",
+  time: "Zeit",
+  pressure_msl: "Luftdruck",
+  pressure_msl_mean: "Durchschnittlicher Luftdruck",
+  wind_gust_icon: "Windb\xF6en Icon",
+  wind_direction_icon: "Windrichtung Icon",
+  // Tägliche Vorhersage (Daily&Hourly)
+  temperature_2m_max: "Max. Temperatur",
+  temperature_2m_min: "Min. Temperatur",
+  sunrise: "Sonnenaufgang",
+  sunset: "Sonnenuntergang",
+  sunshine_duration: "Sonnenscheindauer",
+  uv_index_max: "Max. UV-Index",
+  rain_sum: "Regensumme",
+  rain: "Regen",
+  soil_temperature_0cm: "Boden-Temperatur (0cm)",
+  snowfall: "Schneefall",
+  snow_depth: "Schneehoehe",
+  snowfall_sum: "Schneefallsumme",
+  precipitation_probability_max: "Max. Niederschlagswahrscheinlichkeit",
+  wind_speed_10m_max: "Max. Windgeschwindigkeit",
+  wind_direction_10m_dominant: "Vorherrschende Windrichtung",
+  wind_gusts_10m_max: "Max. Windb\xF6en",
+  dew_point_2m_mean: "Durchschnittlicher Taupunkt (2m)",
+  // Luftqualität (Air Quality)
+  european_aqi: "Europ\xE4ischer Luftqualit\xE4tsindex",
+  pm10: "Feinstaub PM10",
+  pm2_5: "Feinstaub PM2.5",
+  alder_pollen: "Erlenpollen",
+  birch_pollen: "Birkenpollen",
+  grass_pollen: "Graspollen",
+  mugwort_pollen: "Beifu\xDFpollen",
+  ragweed_pollen: "Ambrosiapollen",
+  ragweed_pollen_text: "Ambrosiapollen Belastung",
+  mugwort_pollen_text: "Beifu\xDFpollen Belasung",
+  grass_pollen_text: "Graspollen Belastung",
+  birch_pollen_text: "Birkenpollen Belastung",
+  alder_pollen_text: "Erlenpollen Belastung"
+};
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  de
+});
+//# sourceMappingURL=de.js.map

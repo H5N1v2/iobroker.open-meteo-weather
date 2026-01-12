@@ -1,7 +1,22 @@
 
-node_modules/
-Thumbs.db
-*.log
-npm-debug.log*
+# No dot-directories except github/vscode
+.*/
+!.vscode/
+!.github/
 
-.*
+*.code-workspace
+node_modules
+nbproject
+
+# npm package files
+iobroker.*.tgz
+.npmrc
+
+Thumbs.db
+.commitinfo
+
+# i18n intermediate files
+admin/i18n/flat.txt
+admin/i18n/*/flat.txt
+
+/.vscode/extensions.json

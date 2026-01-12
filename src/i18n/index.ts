@@ -17,24 +17,25 @@ import { uk } from './uk';
  * Struktur: translations[Sprachcode][DatenpunktKey]
  */
 export const translations: Record<string, Record<string, string>> = {
-    de,
-    en,
-    pl,
-    ru,
-    it,
-    es,
-    "zh-cn": zh,
-    fr,
-    pt,
-    nl,
-    uk
+	de,
+	en,
+	pl,
+	ru,
+	it,
+	es,
+	'zh-cn': zh,
+	fr,
+	pt,
+	nl,
+	uk,
 };
 
 /**
  * Hilfsfunktion für die Verwendung in der main.ts
+ *
  * @param key Der Key aus den Sprachdateien (z.B. 'temperature_2m')
  * @param lang Der aktuelle Sprachcode des ioBroker Systems
  */
 export function getI18nName(key: string, lang: string = 'en'): string {
-    return translations[lang]?.[key] || translations['en']?.[key] || key;
+	return translations[lang]?.[key] || translations.en?.[key] || key;
 }

@@ -1,57 +1,82 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.zh = void 0;
-exports.zh = {
-    // Aktuelle Werte (Current)
-    "temperature_2m": "温度 (2米)",
-    "relative_humidity_2m": "相对湿度 (2米)",
-    "apparent_temperature": "体感温度",
-    "precipitation": "降水量",
-    "weather_code": "天气代码",
-    "cloud_cover": "云量",
-    "wind_speed_10m": "风速 (10米)",
-    "wind_direction_10m": "风向 (10米)",
-    "wind_gusts_10m": "阵风 (10米)",
-    "is_day": "白天/黑夜",
-    "dew_point_2m": "露点 (2米)",
-    "wind_direction_text": "风向文本",
-    "weather_text": "天气文本",
-    "icon_url": "图标URL",
-    "time": "时间",
-    "pressure_msl": "表面压力",
-    "pressure_msl_mean": "平均表面压力",
-    "wind_gust_icon": "阵风图标",
-    "wind_direction_icon": "风向图标",
-    // Tägliche Vorhersage (Daily&Hourly)
-    "temperature_2m_max": "最高温度",
-    "temperature_2m_min": "最低温度",
-    "sunrise": "日出",
-    "sunset": "日落",
-    "sunshine_duration": "日照时长",
-    "uv_index_max": "最高紫外线指数",
-    "rain_sum": "总降雨量",
-    "rain": "雨量",
-    "soil_temperature_0cm": "土壤温度 (0厘米)",
-    "snowfall": "雪量",
-    "snow_depth": "雪深",
-    "snowfall_sum": "总降雪量",
-    "precipitation_probability_max": "最大降水概率",
-    "wind_speed_10m_max": "最大风速",
-    "wind_direction_10m_dominant": "主导风向",
-    "wind_gusts_10m_max": "最大阵风",
-    "dew_point_2m_mean": "平均露点温度 (2米)",
-    // Luftqualität (Air Quality)
-    "european_aqi": "欧洲空气质量指数",
-    "pm10": "PM10颗粒物",
-    "pm2_5": "PM2.5颗粒物",
-    "alder_pollen": "桤木花粉",
-    "birch_pollen": "桦树花粉",
-    "grass_pollen": "草花粉",
-    "mugwort_pollen": "艾蒿花粉",
-    "ragweed_pollen": "豚草花粉",
-    "ragweed_pollen_text": "豚草花粉过敏指数",
-    "mugwort_pollen_text": "艾草花粉过敏指数",
-    "grass_pollen_text": "牧草花粉过敏指数",
-    "birch_pollen_text": "桦树花粉过敏指数",
-    "alder_pollen_text": "赤杨花粉过敏指数"
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var zh_exports = {};
+__export(zh_exports, {
+  zh: () => zh
+});
+module.exports = __toCommonJS(zh_exports);
+const zh = {
+  // Aktuelle Werte (Current)
+  temperature_2m: "\u6E29\u5EA6 (2\u7C73)",
+  relative_humidity_2m: "\u76F8\u5BF9\u6E7F\u5EA6 (2\u7C73)",
+  apparent_temperature: "\u4F53\u611F\u6E29\u5EA6",
+  precipitation: "\u964D\u6C34\u91CF",
+  weather_code: "\u5929\u6C14\u4EE3\u7801",
+  cloud_cover: "\u4E91\u91CF",
+  wind_speed_10m: "\u98CE\u901F (10\u7C73)",
+  wind_direction_10m: "\u98CE\u5411 (10\u7C73)",
+  wind_gusts_10m: "\u9635\u98CE (10\u7C73)",
+  is_day: "\u767D\u5929/\u9ED1\u591C",
+  dew_point_2m: "\u9732\u70B9 (2\u7C73)",
+  wind_direction_text: "\u98CE\u5411\u6587\u672C",
+  weather_text: "\u5929\u6C14\u6587\u672C",
+  icon_url: "\u56FE\u6807URL",
+  time: "\u65F6\u95F4",
+  pressure_msl: "\u8868\u9762\u538B\u529B",
+  pressure_msl_mean: "\u5E73\u5747\u8868\u9762\u538B\u529B",
+  wind_gust_icon: "\u9635\u98CE\u56FE\u6807",
+  wind_direction_icon: "\u98CE\u5411\u56FE\u6807",
+  // Tägliche Vorhersage (Daily&Hourly)
+  temperature_2m_max: "\u6700\u9AD8\u6E29\u5EA6",
+  temperature_2m_min: "\u6700\u4F4E\u6E29\u5EA6",
+  sunrise: "\u65E5\u51FA",
+  sunset: "\u65E5\u843D",
+  sunshine_duration: "\u65E5\u7167\u65F6\u957F",
+  uv_index_max: "\u6700\u9AD8\u7D2B\u5916\u7EBF\u6307\u6570",
+  rain_sum: "\u603B\u964D\u96E8\u91CF",
+  rain: "\u96E8\u91CF",
+  soil_temperature_0cm: "\u571F\u58E4\u6E29\u5EA6 (0\u5398\u7C73)",
+  snowfall: "\u96EA\u91CF",
+  snow_depth: "\u96EA\u6DF1",
+  snowfall_sum: "\u603B\u964D\u96EA\u91CF",
+  precipitation_probability_max: "\u6700\u5927\u964D\u6C34\u6982\u7387",
+  wind_speed_10m_max: "\u6700\u5927\u98CE\u901F",
+  wind_direction_10m_dominant: "\u4E3B\u5BFC\u98CE\u5411",
+  wind_gusts_10m_max: "\u6700\u5927\u9635\u98CE",
+  dew_point_2m_mean: "\u5E73\u5747\u9732\u70B9\u6E29\u5EA6 (2\u7C73)",
+  // Luftqualität (Air Quality)
+  european_aqi: "\u6B27\u6D32\u7A7A\u6C14\u8D28\u91CF\u6307\u6570",
+  pm10: "PM10\u9897\u7C92\u7269",
+  pm2_5: "PM2.5\u9897\u7C92\u7269",
+  alder_pollen: "\u6864\u6728\u82B1\u7C89",
+  birch_pollen: "\u6866\u6811\u82B1\u7C89",
+  grass_pollen: "\u8349\u82B1\u7C89",
+  mugwort_pollen: "\u827E\u84BF\u82B1\u7C89",
+  ragweed_pollen: "\u8C5A\u8349\u82B1\u7C89",
+  ragweed_pollen_text: "\u8C5A\u8349\u82B1\u7C89\u8FC7\u654F\u6307\u6570",
+  mugwort_pollen_text: "\u827E\u8349\u82B1\u7C89\u8FC7\u654F\u6307\u6570",
+  grass_pollen_text: "\u7267\u8349\u82B1\u7C89\u8FC7\u654F\u6307\u6570",
+  birch_pollen_text: "\u6866\u6811\u82B1\u7C89\u8FC7\u654F\u6307\u6570",
+  alder_pollen_text: "\u8D64\u6768\u82B1\u7C89\u8FC7\u654F\u6307\u6570"
+};
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  zh
+});
+//# sourceMappingURL=zh.js.map

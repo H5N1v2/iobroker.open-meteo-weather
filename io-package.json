@@ -1,8 +1,36 @@
 {
   "common": {
     "name": "open-meteo-weather",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "title": "Open-Meteo Weather Service",
+    "news": {
+      "1.2.0": {
+        "en": "Updated internal project structure to latest standards; improved code stability and maintenance.",
+        "de": "Interne Projektstruktur auf den neuesten Stand gebracht; Stabilität und Wartbarkeit verbessert.",
+        "ru": "Обновлена внутренняя структура проекта до последних стандартов.",
+        "pt": "Estrutura interna do projeto atualizada para os padrões mais recentes.",
+        "nl": "Interne projectstructuur bijgewerkt naar de nieuwste standaarden.",
+        "fr": "Mise à jour de la structure interne du projet selon les dernières normes.",
+        "it": "Struttura interna del progetto aggiornata agli standard più recenti.",
+        "es": "Estructura interna del proyecto actualizada a los últimos estándares.",
+        "pl": "Zaktualizowano wewnętrzną strukturę projektu do najnowszych standardów.",
+        "uk": "Оновлено внутрішню структуру проекту до останніх стандартів.",
+        "zh-cn": "内部项目结构已更新至最新标准。"
+    },
+      "1.1.0": {
+        "en": "fix for air quality timestamps, added icons for wind direction and storm warnings",
+        "de": "Fix für Luftqualität-Zeitstempel, Icons für Windrichtung und Sturmwarnungen hinzugefügt",
+        "ru": "исправление временных меток качества воздуха, добавлены значки направления ветра и штормовых предупреждений",
+        "pt": "correção de data e hora da qualidade do ar, adição de ícones de direção do vento e avisos de tempestade",
+        "nl": "fix voor tijdstempels van luchtkwaliteit, iconen voor windrichting en stormwaarschuwingen toegevoegd",
+        "fr": "correction des horodatages de la qualité de l'air, ajout d'icônes pour la direction du vent et les alertes de tempête",
+        "it": "correzione dei timestamp della qualità dell'aria, aggiunte icone per la direzione del vento e gli avvisi di tempesta",
+        "es": "corrección de marcas de tiempo de calidad del aire, iconos de dirección de viento y advertencias de tormenta añadidos",
+        "pl": "poprawka znaczników czasu jakości powietrza, dodano ikony kierunku wiatru i ostrzeżeń burzowych",
+        "uk": "виправлення часових міток якості повітря, додано іконки напрямку вітру та штормових попереджень",
+        "zh-cn": "修复了空气质量时间戳，增加了风向和风暴警告图标"
+      }
+    },
     "adminUI": {
       "config": "json"
     },
@@ -32,22 +60,6 @@
       "uk": "Отримуйте дані про місцеву погоду, якість повітря та пилок з Open-Meteo.com",
       "zh-cn": "从 Open-Meteo.com 获取当地天气、空气质量 and 花粉数据"
     },
-    "news": {
-      "1.1.0": {
-        "en": "Initial NPM release, fix for air quality timestamps, added icons for wind direction and storm warnings",
-        "de": "Initiales NPM-Release, Fix für Luftqualität-Zeitstempel, Icons für Windrichtung und Sturmwarnungen hinzugefügt",
-        "ru": "Первый релиз в NPM, исправление временных меток качества воздуха, добавлены значки направления ветра и штормовых предупреждений",
-        "pt": "Lançamento inicial do NPM, correção de data e hora da qualidade do ar, adição de ícones de direção do vento e avisos de tempestade",
-        "nl": "Eerste NPM-release, fix voor tijdstempels van luchtkwaliteit, iconen voor windrichting en stormwaarschuwingen toegevoegd",
-        "fr": "Première version NPM, correction des horodatages de la qualité de l'air, ajout d'icônes pour la direction du vent et les alertes de tempête",
-        "it": "Rilascio iniziale NPM, correzione dei timestamp della qualità dell'aria, aggiunte icone per la direzione del vento e gli avvisi di tempesta",
-        "es": "Lanzamiento inicial de NPM, corrección de marcas de tiempo de calidad del aire, iconos de dirección de viento y advertencias de tormenta añadidos",
-        "pl": "Pierwsze wydanie NPM, poprawka znaczników czasu jakości powietrza, dodano ikony kierunku wiatru i ostrzeżeń burzowych",
-        "uk": "Перший реліз NPM, виправлення часових міток якості повітря, додано іконки напрямку вітру та штормових попереджень",
-        "zh-cn": "最初的 NPM 发布，修复了空气质量时间戳，增加了风向和风暴警告图标"
-      }
-    },
-    "icon": "open-meteo.png",
     "authors": [
       "H5N1v2 <h5n1@iknox.de>"
     ],
@@ -58,9 +70,22 @@
       "pollen",
       "air quality"
     ],
+    		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
     "type": "weather",
     "mode": "daemon",
-    "platform": "Javascript/Node.js"
+    "platform": "Javascript/Node.js",
+		"icon": "open-meteo.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/H5N1v2/iobroker.open-meteo-weather/main/admin/open-meteo.png",
+		"readme": "https://github.com/H5N1v2/iobroker.open-meteo-weather/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll"
   },
   "native": {
     "latitude": 51.34,

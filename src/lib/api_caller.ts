@@ -1,49 +1,67 @@
 // api_caller.ts
 import axios from 'axios';
+
+/**
+ * Konfiguration für den Wetter-API-Abruf
+ */
 export interface WeatherConfig {
-    latitude: number;
-    longitude: number;
-    forecastDays: number;
-    forecastHours: number;
-    forecastHoursEnabled: boolean;
-    airQualityEnabled: boolean;
-    timezone: string;
-    isImperial: boolean;
+	/** Breitengrad */
+	latitude: number;
+	/** Längengrad */
+	longitude: number;
+	/** Anzahl der Vorhersagetage */
+	forecastDays: number;
+	/** Anzahl der Vorhersagestunden */
+	forecastHours: number;
+	/** Ob stündliche Vorhersage aktiviert ist */
+	forecastHoursEnabled: boolean;
+	/** Ob Luftqualitätsdaten abgerufen werden sollen */
+	airQualityEnabled: boolean;
+	/** Die Zeitzone (z.B. Europe/Berlin) */
+	timezone: string;
+	/** Ob imperiale Einheiten genutzt werden sollen */
+	isImperial: boolean;
 }
 
-export async function fetchAllWeatherData(config: WeatherConfig) {
-    const tz = encodeURIComponent(config.timezone);
-    const results: any = {};
+/**
+ * Holt alle Wetter- und Luftqualitätsdaten von der Open-Meteo API
+ *
+ * @param config Die Konfiguration für den Abruf
+ * @returns Die abgerufenen Wetterdaten als Objekt
+ */
+export async function fetchAllWeatherData(config: WeatherConfig): Promise<any> {
+	const tz = encodeURIComponent(config.timezone);
+	const results: any = {};
 
-    // Imperiale Parameter vorbereiten
-    const unitParams = config.isImperial 
-        ? '&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch' 
-        : '';
+	// Imperiale Parameter vorbereiten
+	const unitParams = config.isImperial
+		? '&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch'
+		: '';
 
-    let fHoursParam = ''; 
-    let fHoursParam_keys = '';
+	let fHoursParam = '';
+	let fHoursParam_keys = '';
 
-    if (config.forecastHoursEnabled) {
-        const totalHours = config.forecastDays * 24; 
-        fHoursParam = `&forecast_hours=${totalHours}`;
-        fHoursParam_keys = `&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,precipitation_probability,rain,weather_code,pressure_msl,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,soil_temperature_0cm,uv_index,sunshine_duration,is_day,snowfall,snow_depth`;
-    }
+	if (config.forecastHoursEnabled) {
+		const totalHours = config.forecastDays * 24;
+		fHoursParam = `&forecast_hours=${totalHours}`;
+		fHoursParam_keys = `&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,precipitation_probability,rain,weather_code,pressure_msl,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,soil_temperature_0cm,uv_index,sunshine_duration,is_day,snowfall,snow_depth`;
+	}
 
-    // URL mit unitParams erweitern
-    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${config.latitude}&longitude=${config.longitude}&current=temperature_2m,relative_humidity_2m,pressure_msl,apparent_temperature,precipitation,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,pressure_msl_mean,sunrise,sunshine_duration,sunset,uv_index_max,rain_sum,snowfall_sum,precipitation_probability_max,wind_speed_10m_max,wind_direction_10m_dominant,wind_gusts_10m_max,dew_point_2m_mean${fHoursParam_keys}&timezone=${tz}&forecast_days=${config.forecastDays}${fHoursParam}${unitParams}`;
-    
-    const resW = await axios.get(weatherUrl);
-    results.weather = resW.data;
+	// URL mit unitParams erweitern
+	const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${config.latitude}&longitude=${config.longitude}&current=temperature_2m,relative_humidity_2m,pressure_msl,apparent_temperature,precipitation,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,pressure_msl_mean,sunrise,sunshine_duration,sunset,uv_index_max,rain_sum,snowfall_sum,precipitation_probability_max,wind_speed_10m_max,wind_direction_10m_dominant,wind_gusts_10m_max,dew_point_2m_mean${fHoursParam_keys}&timezone=${tz}&forecast_days=${config.forecastDays}${fHoursParam}${unitParams}`;
 
-    if (resW.data.hourly) {
-        results.hourly = resW.data; 
-    }
+	const resW = await axios.get(weatherUrl);
+	results.weather = resW.data;
 
-    if (config.airQualityEnabled) {
-        const airUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${config.latitude}&longitude=${config.longitude}&current=european_aqi,pm10,pm2_5,alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,ragweed_pollen&timezone=${tz}&forecast_days=${config.forecastDays > 7 ? 7 : config.forecastDays}`;
-        const resA = await axios.get(airUrl);
-        results.air = resA.data;
-    }
+	if (resW.data.hourly) {
+		results.hourly = resW.data;
+	}
 
-    return results;
+	if (config.airQualityEnabled) {
+		const airUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${config.latitude}&longitude=${config.longitude}&current=european_aqi,pm10,pm2_5,alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,ragweed_pollen&timezone=${tz}&forecast_days=${config.forecastDays > 7 ? 7 : config.forecastDays}`;
+		const resA = await axios.get(airUrl);
+		results.air = resA.data;
+	}
+
+	return results;
 }

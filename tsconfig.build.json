@@ -1,14 +1,16 @@
-
+// Specialized tsconfig to only compile .ts-files in the src dir
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2020",
-        "noImplicitAny": false,
-        "sourceMap": false,
-        "outDir": "build",
-        "skipLibCheck": true,
-        "esModuleInterop": true
-    },
-    "include": ["src/**/*.ts"],
-    "exclude": ["node_modules"]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"allowJs": false,
+		"checkJs": false,
+		"noEmit": false,
+		"declaration": false
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"src/**/*.test.ts"
+	]
 }
