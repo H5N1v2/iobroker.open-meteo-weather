@@ -5,6 +5,8 @@
 [![Downloads](https://img.shields.io/npm/dm/iobroker.open-meteo-weather.svg)](https://www.npmjs.com/package/iobroker.open-meteo-weather)
 ![Number of Installations](https://iobroker.live/badges/open-meteo-weather.svg)
 
+[![NPM](https://nodei.co/npm/iobroker.open-meteo-weather.svg)](https://nodei.co/npm/iobroker.open-meteo-weather/)
+
 **The Open-Meteo Weather Service Adapter for ioBroker.**
 
 This adapter provides precise weather data, forecasts, air quality, and pollen information powered by [Open-Meteo.com](https://open-meteo.com/). It is free for non-commercial use (under 10,000 daily API calls) and requires no API key registration, making the setup process extremely simple.
