@@ -19,7 +19,11 @@
             "descriptionText": {
               "type": "staticText",
               "text": "descriptionText_text",
-              "style": { "fontStyle": "italic" },
+              "style": { 
+                "fontStyle": "italic",
+                "fontSize": "20px",
+                "fontWeight": "bold"
+             },
               "xs": 12, "sm": 9, "md": 10, "lg": 10
             }
           }
@@ -32,24 +36,53 @@
           "size": 5,
           "xs": 12
         },
-        "latitude": {
-          "type": "number",
-          "label": "latitude_label",
-          "xs": 12, "sm": 6, "md": 4, "lg": 3
-        },
-        "longitude": {
-          "type": "number",
-          "label": "longitude_label",
-          "xs": 12, "sm": 6, "md": 4, "lg": 3
+        "locations": {
+          "type": "table",
+          "sm": 12,
+          "label": "locations_label",
+          "help": "locations_help",
+          "items": [
+            {
+              "type": "text",
+              "attr": "name",
+              "label": "location_name_label",
+              "width": "200px"
+            },
+            {
+              "type": "number",
+              "attr": "latitude",
+              "label": "latitude_label",
+              "width": "120px"
+            },
+            {
+              "type": "number",
+              "attr": "longitude",
+              "label": "longitude_label",
+              "width": "120px"
+            },
+            {
+              "type": "text",
+              "attr": "timezone",
+              "label": "timezone_label",
+              "default": "Europe/Berlin",
+              "width": "150px"
+            }
+          ]
         },
         "meteoredURL": {
           "type": "staticLink",
           "text": "koordinates_text",
           "href": "https://www.openstreetmap.org",
           "button": true,
-          "color": "secondary",
-          "icon": "info",
-          "xs": 12, "sm": 12, "md": 4, "lg": 3
+          "color": "primary",
+          "xs": 12, "sm": 12, "md": 6, "lg": 4,
+          "newLine": true,
+          "style": {
+            "marginTop": "20px",
+            "marginBottom": "20px",
+            "fontWeight": "bold",
+            "border": "2px solid #f3d421"
+          }
         },
 
         "divider1": { "type": "divider", "xs": 12 },
@@ -90,8 +123,8 @@
             "label": "unit_system_label",
             "default": false,
             "options": [
-                { "value": false, "label": "metric_label" }, // °C, km/h, mm
-                { "value": true, "label": "imperial_label" } // °F, mph, inch
+                { "value": false, "label": "metric_label" },
+                { "value": true, "label": "imperial_label" }
             ],
             "xs": 12, "sm": 6, "md": 4, "lg": 3
         },
@@ -132,7 +165,7 @@
         },
         "airQualityHint": {
           "type": "staticText",
-          "text": "Aktiviert zusätzliche Luftqualitätsdaten",
+          "text": "airQualityHint_text",
           "xs": 12, "sm": 6, "md": 8, "lg": 9,
           "hidden": "!data.airQualityEnabled",
           "style": { "color": "grey", "paddingTop": "15px" }

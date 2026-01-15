@@ -6,9 +6,13 @@ export {};
 declare global {
     namespace ioBroker {
         interface AdapterConfig {
-            latitude: number;
-            longitude: number;
-            interval: number;
+            locations: {
+                name: string;
+                lat: number;
+                lon: number;
+                tz: string;
+                country?: string;
+            }[];
             pollenEnabled: boolean;
             airQualityEnabled: boolean;
             language: string;
