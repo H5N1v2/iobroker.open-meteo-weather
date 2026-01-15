@@ -64,9 +64,9 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 ## Change Log
 
 ### **WORK IN PROGRESS**
-* (User) Major Feature: Migrated to a dynamic table-based location management (multi-location support).
-* (User) Major Feature: Implemented smart recursive cleanup logic for objects (locations, days, hours, air quality).
-* (User) Improved UI visibility for coordinates link.
+* (H5N1v2) Major Feature: Migrated to a dynamic table-based location management (multi-location support).
+* (H5N1v2) Major Feature: Implemented smart recursive cleanup logic for objects (locations, days, hours, air quality).
+* (H5N1v2) Improved UI visibility for coordinates link.
 
 ### 1.2.1 (2026-01-13)
 * (H5n1v2) Fix settings for adapter checker
