@@ -23,6 +23,7 @@ This adapter provides precise weather data, forecasts, air quality, and pollen i
 * **Automatic Cleanup:** The adapter automatically cleans up the object structure if forecast periods are shortened or changed in the configuration.
 * **Multi-Language Support:** Supports 11 languages (including English, German, Polish, Russian, French, Chinese, etc.).
 * **Unit System:** Seamless switching between Metric (°C, km/h) and Imperial (°F, mph) systems.
+* **Multi Location:** Add multible Locations.
 
 ---
 
@@ -30,12 +31,13 @@ This adapter provides precise weather data, forecasts, air quality, and pollen i
 
 After installation, configure the following fields in the instance settings:
 
-1.  **Coordinates (Latitude & Longitude):** Determine your location (you can find these on openstreetmap.org).
-2.  **Update Interval:** Time interval in minutes (Default: 30 min).
-3.  **Forecast Days:** Number of days for the daily overview (0–16 days).
-4.  **Hourly Forecast:** Toggle and set the number of hours per day (e.g., the next 24 hours).
-5.  **Optional Data:** Checkboxes for pollen and air quality data.
-6.  **Units:** Choose between Metric and Imperial.
+1.  **Location:** Add your Location or a name you want.
+2.  **Coordinates (Latitude & Longitude):** Determine your location (you can find these on openstreetmap.org).
+3.  **Update Interval:** Time interval in minutes (Default: 30 min).
+4.  **Forecast Days:** Number of days for the daily overview (0–16 days).
+5.  **Hourly Forecast:** Toggle and set the number of hours per day (e.g., the next 24 hours).
+6.  **Optional Data:** Checkboxes for pollen and air quality data.
+7.  **Units:** Choose between Metric and Imperial.
 
 ---
 
@@ -60,6 +62,12 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 
 ---
 ## Change Log
+
+### **WORK IN PROGRESS**
+* (User) Major Feature: Migrated to a dynamic table-based location management (multi-location support).
+* (User) Major Feature: Implemented smart recursive cleanup logic for objects (locations, days, hours, air quality).
+* (User) Improved UI visibility for coordinates link.
+
 ### 1.2.1 (2026-01-13)
 * (H5n1v2) Fix settings for adapter checker
 
