@@ -3,7 +3,7 @@
     "name": "open-meteo-weather",
     "version": "1.2.1",
     "news": {
-      "2.0.1": {
+      "2.0.0": {
         "en": "NEW: Multi-location support with dynamic table; Added smart cleanup logic for deleted objects",
         "de": "NEU: Unterstützung für mehrere Standorte via Tabelle; Intelligente Löschlogik für veraltete Objekte .",
         "ru": "НОВОЕ: Поддержка нескольких местоположений через таблицу; Умная логика очистки удаленных объектов",
