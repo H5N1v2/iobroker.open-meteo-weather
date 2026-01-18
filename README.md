@@ -62,6 +62,9 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 
 ---
 ## Change Log
+### **WORK IN PROGRESS**
+* (H5N1v2) Fix wind direction icons
+
 ### 2.0.0 (2026-01-15)
 * (H5N1v2) Major Feature: Migrated to a dynamic table-based location management (multi-location support).
 * (H5N1v2) Major Feature: Implemented smart recursive cleanup logic for objects (locations, days, hours, air quality).
