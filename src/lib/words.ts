@@ -2,6 +2,16 @@ export const weatherTranslations: Record<string, any> = {
 	de: {
 		dirs: ['Norden', 'Nordost', 'Osten', 'Südost', 'Süden', 'Südwest', 'Westen', 'Nordwest'],
 		pollen: { none: 'Keine', low: 'Gering', moderate: 'Mittel', high: 'Hoch' },
+		moon_phases: {
+			new_moon: 'Neumond',
+			waxing_crescent: 'Zunehmender Sichelmond',
+			first_quarter: 'Erstes Viertel',
+			waxing_gibbous: 'Zunehmender Dreiviertelmond',
+			full_moon: 'Vollmond',
+			waning_gibbous: 'Abnehmender Dreiviertelmond',
+			last_quarter: 'Letztes Viertel',
+			waning_crescent: 'Abnehmender Sichelmond',
+		},
 		codes: {
 			0: 'Klarer Himmel',
 			1: 'Hauptsächlich klar',
@@ -36,6 +46,16 @@ export const weatherTranslations: Record<string, any> = {
 	en: {
 		dirs: ['North', 'North-East', 'East', 'South-East', 'South', 'South-West', 'West', 'North-West'],
 		pollen: { none: 'None', low: 'Low', moderate: 'Moderate', high: 'High' },
+		moon_phases: {
+			new_moon: 'New Moon',
+			waxing_crescent: 'Waxing Crescent',
+			first_quarter: 'First Quarter',
+			waxing_gibbous: 'Waxing Gibbous',
+			full_moon: 'Full Moon',
+			waning_gibbous: 'Waning Gibbous',
+			last_quarter: 'Last Quarter',
+			waning_crescent: 'Waning Crescent',
+		},
 		codes: {
 			0: 'Clear sky',
 			1: 'Mainly clear',
@@ -79,6 +99,16 @@ export const weatherTranslations: Record<string, any> = {
 			'Północny-zachód',
 		],
 		pollen: { none: 'Brak', low: 'Niski', moderate: 'Średni', high: 'Wysoki' },
+		moon_phases: {
+			new_moon: 'Nów',
+			waxing_crescent: 'Przyrastający sierp',
+			first_quarter: 'Pierwsza kwadra',
+			waxing_gibbous: 'Przyrastający księżyc',
+			full_moon: 'Pełnia',
+			waning_gibbous: 'Ubywający księżyc',
+			last_quarter: 'Ostatnia kwadra',
+			waning_crescent: 'Ubywający sierp',
+		},
 		codes: {
 			0: 'Czyste niebo',
 			1: 'Głównie bezchmurnie',
@@ -113,6 +143,16 @@ export const weatherTranslations: Record<string, any> = {
 	ru: {
 		dirs: ['Север', 'Северо-восток', 'Восток', 'Юго-восток', 'Юг', 'Юго-запад', 'Запад', 'Северо-запад'],
 		pollen: { none: 'Нет', low: 'Низкий', moderate: 'Средний', high: 'Высокий' },
+		moon_phases: {
+			new_moon: 'Новолуние',
+			waxing_crescent: 'Растущий серп',
+			first_quarter: 'Первая четверть',
+			waxing_gibbous: 'Растущая луна',
+			full_moon: 'Полнолуние',
+			waning_gibbous: 'Убывающая луна',
+			last_quarter: 'Последняя четверть',
+			waning_crescent: 'Убывающий серп',
+		},
 		codes: {
 			0: 'Ясное небо',
 			1: 'Преимущественно ясно',
@@ -147,6 +187,16 @@ export const weatherTranslations: Record<string, any> = {
 	fr: {
 		dirs: ['Nord', 'Nord-Est', 'Est', 'Sud-Est', 'Sud', 'Sud-Ouest', 'Ouest', 'Nord-Ouest'],
 		pollen: { none: 'Aucun', low: 'Faible', moderate: 'Modéré', high: 'Élevé' },
+		moon_phases: {
+			new_moon: 'Nouvelle lune',
+			waxing_crescent: 'Premier croissant',
+			first_quarter: 'Premier quartier',
+			waxing_gibbous: 'Lune gibbeuse croissante',
+			full_moon: 'Pleine lune',
+			waning_gibbous: 'Lune gibbeuse décroissante',
+			last_quarter: 'Dernier quartier',
+			waning_crescent: 'Dernier croissant',
+		},
 		codes: {
 			0: 'Ciel dégagé',
 			1: 'Principalement clair',
@@ -181,6 +231,16 @@ export const weatherTranslations: Record<string, any> = {
 	it: {
 		dirs: ['Nord', 'Nord-Est', 'Est', 'Sud-Est', 'Sud', 'Sud-Ovest', 'Ovest', 'Nord-Ovest'],
 		pollen: { none: 'Nessuno', low: 'Basso', moderate: 'Moderato', high: 'Alto' },
+		moon_phases: {
+			new_moon: 'Luna nuova',
+			waxing_crescent: 'Luna crescente',
+			first_quarter: 'Primo quarto',
+			waxing_gibbous: 'Luna gibbosa crescente',
+			full_moon: 'Luna piena',
+			waning_gibbous: 'Luna gibbosa calante',
+			last_quarter: 'Ultimo quarto',
+			waning_crescent: 'Luna calante',
+		},
 		codes: {
 			0: 'Cielo sereno',
 			1: 'Prevalentemente sereno',
@@ -215,6 +275,16 @@ export const weatherTranslations: Record<string, any> = {
 	es: {
 		dirs: ['Norte', 'Noreste', 'Este', 'Sureste', 'Sur', 'Suroeste', 'Oeste', 'Noroeste'],
 		pollen: { none: 'Ninguno', low: 'Bajo', moderate: 'Moderado', high: 'Alto' },
+		moon_phases: {
+			new_moon: 'Luna nueva',
+			waxing_crescent: 'Luna creciente',
+			first_quarter: 'Cuarto creciente',
+			waxing_gibbous: 'Luna gibosa creciente',
+			full_moon: 'Luna llena',
+			waning_gibbous: 'Luna gibosa menguante',
+			last_quarter: 'Cuarto menguante',
+			waning_crescent: 'Luna menguante',
+		},
 		codes: {
 			0: 'Cielo despejado',
 			1: 'Principalmente despejado',
@@ -249,6 +319,16 @@ export const weatherTranslations: Record<string, any> = {
 	zh: {
 		dirs: ['北', '东北', '东', '东南', '南', '西南', '西', '西北'],
 		pollen: { none: '无', low: '低', moderate: '中等', high: '高' },
+		moon_phases: {
+			new_moon: '新月',
+			waxing_crescent: '峨眉月',
+			first_quarter: '上弦月',
+			waxing_gibbous: '盈凸月',
+			full_moon: '满月',
+			waning_gibbous: '亏凸月',
+			last_quarter: '下弦月',
+			waning_crescent: '残月',
+		},
 		codes: {
 			0: '晴朗',
 			1: '大部晴朗',
@@ -283,6 +363,16 @@ export const weatherTranslations: Record<string, any> = {
 	pt: {
 		dirs: ['Norte', 'Nordeste', 'Este', 'Sudeste', 'Sul', 'Sudoeste', 'Oeste', 'Noroeste'],
 		pollen: { none: 'Nenhum', low: 'Baixo', moderate: 'Moderado', high: 'Alto' },
+		moon_phases: {
+			new_moon: 'Lua nova',
+			waxing_crescent: 'Lua crescente',
+			first_quarter: 'Quarto crescente',
+			waxing_gibbous: 'Lua gibosa crescente',
+			full_moon: 'Lua cheia',
+			waning_gibbous: 'Lua gibosa minguante',
+			last_quarter: 'Quarto minguante',
+			waning_crescent: 'Lua minguante',
+		},
 		codes: {
 			0: 'Céu limpo',
 			1: 'Principalmente limpo',
@@ -326,6 +416,16 @@ export const weatherTranslations: Record<string, any> = {
 			'Північний захід',
 		],
 		pollen: { none: 'Відсутній', low: 'Низький', moderate: 'Середній', high: 'Високий' },
+		moon_phases: {
+			new_moon: 'Новий місяць',
+			waxing_crescent: 'Молодий місяць',
+			first_quarter: 'Перша чверть',
+			waxing_gibbous: 'Прибуваючий місяць',
+			full_moon: 'Повний місяць',
+			waning_gibbous: 'Щербатий місяць',
+			last_quarter: 'Остання чверть',
+			waning_crescent: 'Старий місяць',
+		},
 		codes: {
 			0: 'Ясне небо',
 			1: 'Переважно ясно',
@@ -360,6 +460,16 @@ export const weatherTranslations: Record<string, any> = {
 	nl: {
 		dirs: ['Noord', 'Noordoost', 'Oost', 'Zuidoost', 'Zuid', 'Zuidwest', 'West', 'Noordwest'],
 		pollen: { none: 'Geen', low: 'Laag', moderate: 'Gemiddeld', high: 'Hoog' },
+		moon_phases: {
+			new_moon: 'Nieuwe maan',
+			waxing_crescent: 'Wassende sikkel',
+			first_quarter: 'Eerste kwartier',
+			waxing_gibbous: 'Wassende maan',
+			full_moon: 'Volle maan',
+			waning_gibbous: 'Afnemende maan',
+			last_quarter: 'Laatste kwartier',
+			waning_crescent: 'Afnemende sikkel',
+		},
 		codes: {
 			0: 'Onbewolkt',
 			1: 'Hoofdzakelijk onbewolkt',
