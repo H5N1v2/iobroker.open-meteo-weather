@@ -3,7 +3,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.open-meteo-weather.svg)](https://www.npmjs.com/package/iobroker.open-meteo-weather)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.open-meteo-weather.svg)](https://www.npmjs.com/package/iobroker.open-meteo-weather)
-![Number of Installations](https://iobroker.live/badges/open-meteo-weather.svg)
+![Number of Installations](https://iobroker.live/badges/open-meteo-weather-installed.svg)
 
 [![NPM](https://nodei.co/npm/iobroker.open-meteo-weather.svg)](https://www.npmjs.com/package/iobroker.open-meteo-weather)
 
