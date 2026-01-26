@@ -11,6 +11,8 @@
 
 **The Open-Meteo Weather Service Adapter for ioBroker.**
 
+## First: If you are looking for a widget specifically for this adapter, then create it using [VIS2-widget-script-om-weather](https://github.com/H5N1v2/VIS2-widget-script-om-weather).
+
 This adapter provides precise weather data, forecasts, air quality, and pollen information powered by [Open-Meteo.com](https://open-meteo.com/). It is free for non-commercial use (under 10,000 daily API calls) and requires no API key registration, making the setup process extremely simple.
 
 ---
@@ -24,6 +26,13 @@ This adapter provides precise weather data, forecasts, air quality, and pollen i
 * **Multi-Language Support:** Supports 11 languages (including English, German, Polish, Russian, French, Chinese, etc.).
 * **Unit System:** Seamless switching between Metric (°C, km/h) and Imperial (°F, mph) systems.
 * **Multi Location:** Add multible Locations.
+
+### Air Quality Data
+Currently, only **real-time data (Current)** is supported. 
+
+**Why no forecasts?** The Open-Meteo Air Quality API provides forecast data exclusively on an hourly basis. Processing and storing these large datasets (168+ data points per variable) would result in a disproportionately high system and database load. To keep the adapter lightweight and performant, hourly forecasts are currently omitted. 
+
+*Note: As soon as the API provider offers native daily aggregates, this feature will be integrated.*
 
 ---
 
@@ -62,6 +71,13 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 
 ---
 ## Change Log
+### **WORK IN PROGRESS**
+* (H5N1v2) add unit translations for improved localization in weather data
+* (H5N1v2) add additional pollen units and translations to unit maps
+* (H5N1v2) add carbon monoxide, dust, olive pollen, and ozone in air quality & translations
+* (H5N1v2) refactor weather data fetching to use constants for parameter keys
+* (H5N1v2) remove unused dependencies and scripts
+
 ### 2.1.0 (2026-01-18)
 * (H5N1v2) add module suncalc
 * (H5N1v2) add Moon Phase value, text and icon url datapoints 
