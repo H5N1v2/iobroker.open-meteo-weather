@@ -77,6 +77,7 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 * (H5N1v2) add carbon monoxide, dust, olive pollen, and ozone in air quality & translations
 * (H5N1v2) refactor weather data fetching to use constants for parameter keys
 * (H5N1v2) remove unused dependencies and scripts
+* (H5N1v2) add image for wind warning
 
 ### 2.1.0 (2026-01-18)
 * (H5N1v2) add module suncalc
