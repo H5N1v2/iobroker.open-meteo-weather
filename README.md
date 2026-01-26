@@ -71,7 +71,7 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 
 ---
 ## Change Log
-### **WORK IN PROGRESS**
+### 2.2.1 (2026-01-26)
 * (H5N1v2) fix: Correct quotation marks for relative humidity translation in French
 
 ### 2.2.0 (2026-01-26)

@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "open-meteo-weather",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "news": {
+      "2.2.1": {
+        "en": "fix: Correct quotation marks for relative humidity translation in French",
+        "de": "fix: Richtige Anführungszeichen für relative Luftfeuchtigkeit Übersetzung auf Französisch",
+        "ru": "правильные кавычки для перевода относительной влажности на французский язык",
+        "pt": "correção: Aspas corretas para a tradução de umidade relativa em francês",
+        "nl": "fix: Correcte aanhalingstekens voor relatieve vochtigheid vertaling in het Frans",
+        "fr": "correctif: correct guillemets pour la traduction d'humidité relative en français",
+        "it": "correzione: Corretto segno di quotazione per la traduzione relativa di umidità in francese",
+        "es": "fijado: Marcas de citas correctas para la traducción de humedad relativa en francés",
+        "pl": "fix: Prawidłowe znaki cytowania dla tłumaczenia wilgotności względnej w języku francuskim",
+        "uk": "виправити: Правильні оцінки цін на відносний переклад вологості французьким",
+        "zh-cn": "fix: 法文相对湿度翻译的正确引号"
+      },
       "2.2.0": {
         "en": "add unit translations for improved localization in weather data\nadd additional pollen units and translations to unit maps\nadd carbon monoxide, dust, olive pollen, and ozone in air quality & translations\nrefactor weather data fetching to use constants for parameter keys\nremove unused dependencies and scripts\nadd image for wind warning",
         "de": "einheitsübersetzungen für eine verbesserte lokalisierung in wetterdaten hinzufügen\nzusätzliche polleneinheiten und übersetzungen zu einheitskarten hinzufügen\nkohlenmonoxid, staub, olivenpollen und ozon in luftqualität & übersetzungen hinzufügen\nrefactor wetterdaten fetching, um konstanten für parameterschlüssel zu verwenden\nungenutzte abhängigkeiten und skripte entfernen\nbild für windwarnung hinzufügen",
