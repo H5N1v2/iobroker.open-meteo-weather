@@ -79,7 +79,7 @@ class OpenMeteoWeather extends utils.Adapter {
     const isImperial = config.isImperial || false;
     const factor = isImperial ? 1.60934 : 1;
     if (gusts < 39 / factor) {
-      return "";
+      return `/adapter/${this.name}/icons/wind_icons/z.png`;
     }
     if (gusts < 50 / factor) {
       return `/adapter/${this.name}/icons/wind_icons/0.png`;
@@ -334,6 +334,8 @@ class OpenMeteoWeather extends utils.Adapter {
           "url",
           ""
         );
+        const nameDay = i === 0 ? new Intl.RelativeTimeFormat(this.systemLang, { numeric: "auto" }).format(0, "day") : forecastDate.toLocaleDateString(this.systemLang, { weekday: "long" });
+        await this.createCustomState(`${dayPath}.name_day`, nameDay, "string", "text", "");
         for (const key in data.daily) {
           let val = data.daily[key][i];
           if (key === "time" && typeof val === "string") {
@@ -500,6 +502,7 @@ class OpenMeteoWeather extends utils.Adapter {
   }
   // Erstellt einen neuen Datenpunkt mit benutzerdefinierter Rolle und Einheit
   async createCustomState(id, val, type, role, unit) {
+    var _a, _b;
     await this.setObjectNotExistsAsync(id, {
       type: "state",
       common: {
@@ -507,7 +510,7 @@ class OpenMeteoWeather extends utils.Adapter {
         type,
         role,
         read: true,
-        unit,
+        unit: unit ? (_b = (_a = import_units.unitTranslations[this.systemLang]) == null ? void 0 : _a[unit]) != null ? _b : unit : unit,
         write: false
       },
       native: {}
@@ -516,6 +519,7 @@ class OpenMeteoWeather extends utils.Adapter {
   }
   // Erstellt oder aktualisiert einen Datenpunkt und weist automatisch Einheiten zu
   async extendOrCreateState(id, val, translationKey) {
+    var _a, _b;
     const config = this.config;
     let unit = "";
     const currentUnitMap = config.isImperial ? import_units.unitMapImperial : import_units.unitMapMetric;
@@ -525,6 +529,7 @@ class OpenMeteoWeather extends utils.Adapter {
         break;
       }
     }
+    const displayUnit = unit ? (_b = (_a = import_units.unitTranslations[this.systemLang]) == null ? void 0 : _a[unit]) != null ? _b : unit : unit;
     await this.setObjectNotExistsAsync(id, {
       type: "state",
       common: {
@@ -533,7 +538,7 @@ class OpenMeteoWeather extends utils.Adapter {
         role: "value",
         read: true,
         write: false,
-        unit
+        unit: displayUnit
       },
       native: {}
     });

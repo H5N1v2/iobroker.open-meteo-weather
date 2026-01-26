@@ -2,7 +2,7 @@ import * as utils from '@iobroker/adapter-core';
 import { weatherTranslations } from './lib/words';
 import { translations } from './i18n';
 import { fetchAllWeatherData } from './lib/api_caller';
-import { unitMapMetric, unitMapImperial } from './lib/units';
+import { unitMapMetric, unitMapImperial, unitTranslations } from './lib/units';
 import * as SunCalc from 'suncalc';
 
 class OpenMeteoWeather extends utils.Adapter {
@@ -63,7 +63,7 @@ class OpenMeteoWeather extends utils.Adapter {
 		const factor = isImperial ? 1.60934 : 1;
 
 		if (gusts < 39 / factor) {
-			return '';
+			return `/adapter/${this.name}/icons/wind_icons/z.png`;
 		}
 		if (gusts < 50 / factor) {
 			return `/adapter/${this.name}/icons/wind_icons/0.png`;
@@ -368,6 +368,13 @@ class OpenMeteoWeather extends utils.Adapter {
 					'',
 				);
 
+				// Name des Tages: Tag 0 = "today" (lokalisiert), danach Wochentag
+				const nameDay =
+					i === 0
+						? new Intl.RelativeTimeFormat(this.systemLang, { numeric: 'auto' }).format(0, 'day')
+						: forecastDate.toLocaleDateString(this.systemLang, { weekday: 'long' });
+				await this.createCustomState(`${dayPath}.name_day`, nameDay, 'string', 'text', '');
+
 				for (const key in data.daily) {
 					let val = data.daily[key][i];
 					if (key === 'time' && typeof val === 'string') {
@@ -561,7 +568,7 @@ class OpenMeteoWeather extends utils.Adapter {
 				type,
 				role,
 				read: true,
-				unit,
+				unit: unit ? (unitTranslations[this.systemLang]?.[unit] ?? unit) : unit,
 				write: false,
 			},
 			native: {},
@@ -580,6 +587,7 @@ class OpenMeteoWeather extends utils.Adapter {
 				break;
 			}
 		}
+		const displayUnit = unit ? (unitTranslations[this.systemLang]?.[unit] ?? unit) : unit;
 		await this.setObjectNotExistsAsync(id, {
 			type: 'state',
 			common: {
@@ -588,7 +596,7 @@ class OpenMeteoWeather extends utils.Adapter {
 				role: 'value',
 				read: true,
 				write: false,
-				unit,
+				unit: displayUnit,
 			},
 			native: {},
 		});
