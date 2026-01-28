@@ -27,9 +27,10 @@ export interface WeatherConfig {
  * Holt alle Wetter- und Luftqualitätsdaten von der Open-Meteo API
  *
  * @param config Die Konfiguration für den Abruf
+ * @param logger Optionaler ioBroker Logger für Debug-Ausgaben
  * @returns Die abgerufenen Wetterdaten als Objekt
  */
-export async function fetchAllWeatherData(config: WeatherConfig): Promise<any> {
+export async function fetchAllWeatherData(config: WeatherConfig, logger?: ioBroker.Logger): Promise<any> {
 	const tz = encodeURIComponent(config.timezone);
 	const results: any = {};
 
@@ -55,7 +56,16 @@ export async function fetchAllWeatherData(config: WeatherConfig): Promise<any> {
 	// URL mit unitParams erweitern
 	const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${config.latitude}&longitude=${config.longitude}&current=${currentparam_keys}&daily=${dailyparam_keys}${fHoursParam_keys}&timezone=${tz}&forecast_days=${config.forecastDays}${fHoursParam}${unitParams}`;
 
+	if (logger) {
+		logger.debug(`Open-Meteo Weather URL: ${weatherUrl}`);
+	}
+
 	const resW = await axios.get(weatherUrl);
+
+	if (logger) {
+		logger.debug(`Open-Meteo Weather Response Status: ${resW.status}`);
+	}
+
 	results.weather = resW.data;
 
 	if (resW.data.hourly) {
@@ -66,7 +76,17 @@ export async function fetchAllWeatherData(config: WeatherConfig): Promise<any> {
 		'pm10,pm2_5,alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,ragweed_pollen,carbon_monoxide,dust,olive_pollen,ozone';
 	if (config.airQualityEnabled) {
 		const airUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${config.latitude}&longitude=${config.longitude}&current=european_aqi,${pollenparam_keys}&timezone=${tz}&forecast_days=${config.forecastDays > 7 ? 7 : config.forecastDays}`;
+
+		if (logger) {
+			logger.debug(`Open-Meteo Air Quality URL: ${airUrl}`);
+		}
+
 		const resA = await axios.get(airUrl);
+
+		if (logger) {
+			logger.debug(`Open-Meteo Air Quality Response Status: ${resA.status}`);
+		}
+
 		results.air = resA.data;
 	}
 

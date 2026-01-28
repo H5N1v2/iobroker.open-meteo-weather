@@ -98,26 +98,32 @@ class OpenMeteoWeather extends utils.Adapter {
 
 	// Setzt die Grundeinstellungen beim Start und startet den Update-Zyklus
 	private async onReady(): Promise<void> {
+		this.log.debug('onReady: Adapter starting...');
 		try {
 			const sysConfig = await this.getForeignObjectAsync('system.config');
 			if (sysConfig && sysConfig.common) {
 				this.systemLang = sysConfig.common.language || 'de';
 				this.systemTimeZone = (sysConfig.common as any).timezone || 'Europe/Berlin';
+				this.log.debug(`onReady: System language: ${this.systemLang}, Timezone: ${this.systemTimeZone}`);
 			}
 
 			// Cleanup veralteter Standorte
 			await this.cleanupDeletedLocations();
-		} catch {
-			this.log.error('Initialisierung fehlgeschlagen.');
+		} catch (err: any) {
+			this.log.error(`Initialisierung fehlgeschlagen: ${err.message}`);
 		}
 
 		await this.updateData();
 		const config = this.config as any;
-		const intervalMs = (parseInt(config.updateInterval) || 30) * 60000;
+		const minutes = parseInt(config.updateInterval) || 30;
+		const intervalMs = minutes * 60000;
+
 		this.updateInterval = this.setInterval(() => this.updateData(), intervalMs);
+		this.log.debug(`onReady: Scheduled update every ${minutes} minutes.`);
 	}
 
 	private async cleanupDeletedLocations(): Promise<void> {
+		this.log.debug('cleanupDeletedLocations: Starting cleanup check...');
 		const config = this.config as any;
 		const locations = config.locations || [];
 		const validFolders = locations.map((loc: any) => loc.name.replace(/[^a-zA-Z0-9]/g, '_'));
@@ -128,6 +134,7 @@ class OpenMeteoWeather extends utils.Adapter {
 		const hoursLimit = parseInt(config.forecastHours) || 24;
 
 		const allObjects = await this.getAdapterObjectsAsync();
+		let deletedCount = 0;
 
 		for (const objId in allObjects) {
 			const parts = objId.split('.');
@@ -138,18 +145,21 @@ class OpenMeteoWeather extends utils.Adapter {
 				if (!validFolders.includes(folderName)) {
 					this.log.info(`Lösche veralteten Standort: ${folderName}`);
 					await this.delObjectAsync(objId, { recursive: true });
+					deletedCount++;
 					continue;
 				}
 
 				// 2. Luftqualität deaktiviert?
 				if (!airQualityEnabled && objId.includes(`${folderName}.air`)) {
 					await this.delObjectAsync(objId, { recursive: true });
+					deletedCount++;
 					continue;
 				}
 
 				// 3. Stündliche Vorhersage komplett deaktiviert?
 				if (!forecastHoursEnabled && objId.includes(`${folderName}.weather.forecast.hourly`)) {
 					await this.delObjectAsync(objId, { recursive: true });
+					deletedCount++;
 					continue;
 				}
 
@@ -159,8 +169,8 @@ class OpenMeteoWeather extends utils.Adapter {
 					if (hourlyDayMatch) {
 						const hDayNum = parseInt(hourlyDayMatch[1]);
 						if (hDayNum >= forecastDays) {
-							this.log.debug(`Cleanup stündlich: Lösche Tag ${hDayNum} für ${folderName}`);
 							await this.delObjectAsync(objId, { recursive: true });
+							deletedCount++;
 							continue;
 						}
 					}
@@ -173,6 +183,7 @@ class OpenMeteoWeather extends utils.Adapter {
 						const dayNum = parseInt(dayMatch[1]);
 						if (dayNum >= forecastDays) {
 							await this.delObjectAsync(objId, { recursive: true });
+							deletedCount++;
 							continue;
 						}
 					}
@@ -185,16 +196,19 @@ class OpenMeteoWeather extends utils.Adapter {
 						const hourNum = parseInt(hourMatch[1]);
 						if (hourNum >= hoursLimit) {
 							await this.delObjectAsync(objId, { recursive: true });
+							deletedCount++;
 							continue;
 						}
 					}
 				}
 			}
 		}
+		this.log.debug(`cleanupDeletedLocations: Finished. Objects deleted: ${deletedCount}`);
 	}
 
 	// Steuert den Abruf der Wetterdaten und verteilt sie an die Verarbeitungsfunktionen
 	private async updateData(): Promise<void> {
+		this.log.debug('updateData: Starting data fetch for all locations...');
 		try {
 			const config = this.config as any;
 			const locations = config.locations;
@@ -206,6 +220,7 @@ class OpenMeteoWeather extends utils.Adapter {
 
 			for (const loc of locations) {
 				const folderName = loc.name.replace(/[^a-zA-Z0-9]/g, '_');
+				this.log.debug(`updateData: Fetching data for ${loc.name} (${loc.latitude}/${loc.longitude})`);
 
 				const data = await fetchAllWeatherData({
 					latitude: loc.latitude,
@@ -218,17 +233,20 @@ class OpenMeteoWeather extends utils.Adapter {
 					isImperial: config.isImperial || false,
 				});
 
-				// Verarbeitung SunCalc wird innerhalb von processWeatherData genutzt.
 				if (data.weather) {
+					this.log.debug(`updateData: Processing weather for ${folderName}`);
 					await this.processWeatherData(data.weather, folderName, loc.latitude, loc.longitude);
 				}
 				if (data.hourly) {
+					this.log.debug(`updateData: Processing hourly forecast for ${folderName}`);
 					await this.processForecastHoursData(data.hourly, folderName);
 				}
 				if (data.air) {
+					this.log.debug(`updateData: Processing air quality for ${folderName}`);
 					await this.processAirQualityData(data.air, folderName);
 				}
 			}
+			this.log.debug('updateData: All locations processed successfully.');
 		} catch (error: any) {
 			this.log.error(`Abruf fehlgeschlagen: ${error.message}`);
 		}
@@ -561,6 +579,7 @@ class OpenMeteoWeather extends utils.Adapter {
 		role: string,
 		unit: string,
 	): Promise<void> {
+		this.log.debug(`createCustomState: Updating state ${id} (role: ${role})`);
 		await this.setObjectNotExistsAsync(id, {
 			type: 'state',
 			common: {
@@ -588,6 +607,7 @@ class OpenMeteoWeather extends utils.Adapter {
 			}
 		}
 		const displayUnit = unit ? (unitTranslations[this.systemLang]?.[unit] ?? unit) : unit;
+		this.log.debug(`extendOrCreateState: Updating state ${id} (unit: ${displayUnit})`);
 		await this.setObjectNotExistsAsync(id, {
 			type: 'state',
 			common: {
@@ -605,6 +625,7 @@ class OpenMeteoWeather extends utils.Adapter {
 
 	// Bereinigt Intervalle beim Beenden des Adapters
 	private onUnload(callback: () => void): void {
+		this.log.debug('onUnload: Cleaning up intervals.');
 		if (this.updateInterval) {
 			this.clearInterval(this.updateInterval);
 		}

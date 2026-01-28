@@ -32,7 +32,7 @@ __export(api_caller_exports, {
 });
 module.exports = __toCommonJS(api_caller_exports);
 var import_axios = __toESM(require("axios"));
-async function fetchAllWeatherData(config) {
+async function fetchAllWeatherData(config, logger) {
   const tz = encodeURIComponent(config.timezone);
   const results = {};
   const unitParams = config.isImperial ? "&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch" : "";
@@ -46,7 +46,13 @@ async function fetchAllWeatherData(config) {
   const currentparam_keys = "temperature_2m,relative_humidity_2m,pressure_msl,apparent_temperature,precipitation,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,is_day";
   const dailyparam_keys = "relative_humidity_2m_mean,weather_code,temperature_2m_max,temperature_2m_min,pressure_msl_mean,sunrise,sunshine_duration,sunset,uv_index_max,rain_sum,snowfall_sum,precipitation_probability_max,wind_speed_10m_max,wind_direction_10m_dominant,wind_gusts_10m_max,dew_point_2m_mean";
   const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${config.latitude}&longitude=${config.longitude}&current=${currentparam_keys}&daily=${dailyparam_keys}${fHoursParam_keys}&timezone=${tz}&forecast_days=${config.forecastDays}${fHoursParam}${unitParams}`;
+  if (logger) {
+    logger.debug(`Open-Meteo Weather URL: ${weatherUrl}`);
+  }
   const resW = await import_axios.default.get(weatherUrl);
+  if (logger) {
+    logger.debug(`Open-Meteo Weather Response Status: ${resW.status}`);
+  }
   results.weather = resW.data;
   if (resW.data.hourly) {
     results.hourly = resW.data;
@@ -54,7 +60,13 @@ async function fetchAllWeatherData(config) {
   const pollenparam_keys = "pm10,pm2_5,alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,ragweed_pollen,carbon_monoxide,dust,olive_pollen,ozone";
   if (config.airQualityEnabled) {
     const airUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${config.latitude}&longitude=${config.longitude}&current=european_aqi,${pollenparam_keys}&timezone=${tz}&forecast_days=${config.forecastDays > 7 ? 7 : config.forecastDays}`;
+    if (logger) {
+      logger.debug(`Open-Meteo Air Quality URL: ${airUrl}`);
+    }
     const resA = await import_axios.default.get(airUrl);
+    if (logger) {
+      logger.debug(`Open-Meteo Air Quality Response Status: ${resA.status}`);
+    }
     results.air = resA.data;
   }
   return results;
