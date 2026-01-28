@@ -9,12 +9,12 @@
         // --- HEADER BEREICH ---
         "headerPanel": {
           "type": "panel",
-          "sm": 12,
+          "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12, 
           "items": {
             "icontest": {
               "type": "staticImage",
               "src": "open-meteo.png",
-              "xs": 12, "sm": 3, "md": 2, "lg": 2
+              "xs": 12, "sm": 3, "md": 2, "lg": 2, "xl": 2 
             },
             "descriptionText": {
               "type": "staticText",
@@ -23,8 +23,8 @@
                 "fontStyle": "italic",
                 "fontSize": "20px",
                 "fontWeight": "bold"
-             },
-              "xs": 12, "sm": 9, "md": 10, "lg": 10
+              },
+              "xs": 12, "sm": 9, "md": 9, "lg": 9, "xl": 9 
             }
           }
         },
@@ -34,11 +34,11 @@
           "type": "header",
           "text": "location_header_text",
           "size": 5,
-          "xs": 12
+          "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 
         },
         "locations": {
           "type": "table",
-          "sm": 12,
+          "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12,
           "label": "locations_label",
           "help": "locations_help",
           "items": [
@@ -75,7 +75,7 @@
           "href": "https://www.openstreetmap.org",
           "button": true,
           "color": "primary",
-          "xs": 12, "sm": 12, "md": 6, "lg": 4,
+          "xs": 12, "sm": 12, "md": 6, "lg": 4, "xl": 4,
           "newLine": true,
           "style": {
             "marginTop": "20px",
@@ -85,14 +85,14 @@
           }
         },
 
-        "divider1": { "type": "divider", "xs": 12 },
+        "divider1": { "type": "divider", "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 }, 
 
         // --- OPTIONEN BEREICH ---
         "options_header": {
           "type": "header",
           "text": "options_header_text",
           "size": 5,
-          "xs": 12
+          "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 
         },
         "updateInterval": {
           "type": "select",
@@ -103,7 +103,7 @@
             { "value": 30, "label": "interval_30_min" },
             { "value": 60, "label": "interval_60_min" }
           ],
-          "xs": 12, "sm": 6, "md": 4, "lg": 3
+          "xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3 
         },
         "forecastDays": {
           "type": "select",
@@ -116,7 +116,7 @@
             { "value": 14, "label": "days_14" },
             { "value": 16, "label": "days_16" }
           ],
-          "xs": 12, "sm": 6, "md": 4, "lg": 3
+          "xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3 
         },
         "isImperial": {
             "type": "select",
@@ -126,10 +126,10 @@
                 { "value": false, "label": "metric_label" },
                 { "value": true, "label": "imperial_label" }
             ],
-            "xs": 12, "sm": 6, "md": 4, "lg": 3
+            "xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3 
         },
 
-        "divider2": { "type": "divider", "xs": 12 },
+        "divider2": { "type": "divider", "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12 }, 
 
         // --- STÜNDLICHE VORHERSAGE ---
         "forecastHoursEnabled": {
@@ -137,7 +137,7 @@
           "label": "forecastHoursEnabled_label",
           "help": "forecastHoursEnabled_help",
           "default": false,
-          "xs": 12, "sm": 6, "md": 4, "lg": 3
+          "xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3 
         },
         "forecastHours": {
           "type": "select",
@@ -149,24 +149,24 @@
             { "value": 12, "label": "Hours_12" },
             { "value": 24, "label": "Hours_24" }
           ],
-          "xs": 12, "sm": 6, "md": 4, "lg": 3,
+          "xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3, 
           "hidden": "!data.forecastHoursEnabled"
         },
 
-        "divider3": { "type": "divider", "xs": 12, "hidden": "!data.airQualityEnabled" },
+        "divider3": { "type": "divider", "xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12, "hidden": "!data.airQualityEnabled" }, 
 
         // --- LUFTQUALITÄT ---
         "airQualityEnabled": {
           "type": "checkbox",
           "label": "airQualityEnabled_label",
           "default": false,
-          "xs": 12, "sm": 6, "md": 4, "lg": 3,
+          "xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3, 
           "newLine": true
         },
         "airQualityHint": {
           "type": "staticText",
           "text": "airQualityHint_text",
-          "xs": 12, "sm": 6, "md": 8, "lg": 9,
+          "xs": 12, "sm": 6, "md": 6, "lg": 6, "xl": 6,
           "hidden": "!data.airQualityEnabled",
           "style": { "color": "grey", "paddingTop": "15px" }
         }

@@ -6,7 +6,7 @@ import { pl } from './pl';
 import { ru } from './ru';
 import { it } from './it';
 import { es } from './es';
-import { zh } from './zh';
+import { zh } from './zh-cn';
 import { fr } from './fr';
 import { pt } from './pt';
 import { nl } from './nl';

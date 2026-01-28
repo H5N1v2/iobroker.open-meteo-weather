@@ -28,7 +28,7 @@ var import_pl = require("./pl");
 var import_ru = require("./ru");
 var import_it = require("./it");
 var import_es = require("./es");
-var import_zh = require("./zh");
+var import_zh_cn = require("./zh-cn");
 var import_fr = require("./fr");
 var import_pt = require("./pt");
 var import_nl = require("./nl");
@@ -40,7 +40,7 @@ const translations = {
   ru: import_ru.ru,
   it: import_it.it,
   es: import_es.es,
-  "zh-cn": import_zh.zh,
+  "zh-cn": import_zh_cn.zh,
   fr: import_fr.fr,
   pt: import_pt.pt,
   nl: import_nl.nl,

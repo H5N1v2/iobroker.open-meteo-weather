@@ -16,11 +16,11 @@ var __copyProps = (to, from, except, desc) => {
   return to;
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-var zh_exports = {};
-__export(zh_exports, {
+var zh_cn_exports = {};
+__export(zh_cn_exports, {
   zh: () => zh
 });
-module.exports = __toCommonJS(zh_exports);
+module.exports = __toCommonJS(zh_cn_exports);
 const zh = {
   // Aktuelle Werte (Current)
   temperature_2m: "\u6E29\u5EA6 (2\u7C73)",
@@ -91,4 +91,4 @@ const zh = {
 0 && (module.exports = {
   zh
 });
-//# sourceMappingURL=zh.js.map
+//# sourceMappingURL=zh-cn.js.map
