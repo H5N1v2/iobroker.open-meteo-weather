@@ -70,7 +70,7 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 | `air.current` | Air quality and pollen levels as text and value |
 
 ---
-# Change Log
+## Change Log
 ### 2.2.1 (2026-01-26)
 * (H5N1v2) fix: Correct quotation marks for relative humidity translation in French
 
