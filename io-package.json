@@ -1,3 +1,4 @@
+
 {
   "common": {
     "name": "open-meteo-weather",
@@ -169,7 +170,7 @@
     "airQualityEnabled": false,
     "language": "de",
     "forecastDays": 1,
-    "forecastHours": 24,
+    "forecastHours": 1,
     "forecastHoursEnabled": false,
     "locations": []
   }
