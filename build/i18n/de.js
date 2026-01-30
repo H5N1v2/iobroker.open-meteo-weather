@@ -56,6 +56,7 @@ const de = {
   snow_depth: "Schneehoehe",
   snowfall_sum: "Schneefallsumme",
   precipitation_probability_max: "Max. Niederschlagswahrscheinlichkeit",
+  precipitation_probability: "Niederschlagswahrscheinlichkeit",
   wind_speed_10m_max: "Max. Windgeschwindigkeit",
   wind_direction_10m_dominant: "Vorherrschende Windrichtung",
   wind_gusts_10m_max: "Max. Windb\xF6en",

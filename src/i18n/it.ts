@@ -34,6 +34,7 @@ export const it = {
 	snow_depth: 'Profondità neve',
 	snowfall_sum: 'Somma neve',
 	precipitation_probability_max: 'Probabilità precipitazioni max',
+	precipitation_probability: 'Probabilità di precipitazioni',
 	wind_speed_10m_max: 'Velocità del vento max',
 	wind_direction_10m_dominant: 'Direzione del vento dominante',
 	wind_gusts_10m_max: 'Raffiche di vento max',

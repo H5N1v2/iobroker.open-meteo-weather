@@ -34,6 +34,7 @@ export const uk = {
 	snow_depth: 'Висота снігового покриву',
 	snowfall_sum: 'Загальна кількість снігу',
 	precipitation_probability_max: 'Макс. ймовірність опадів',
+	precipitation_probability: 'Ймовірність опадів',
 	wind_speed_10m_max: 'Макс. швидкість вітру',
 	wind_direction_10m_dominant: 'Переважаючий напрямок вітру',
 	wind_gusts_10m_max: 'Макс. пориви вітру',

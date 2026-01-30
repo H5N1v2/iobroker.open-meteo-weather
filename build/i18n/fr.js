@@ -56,6 +56,7 @@ const fr = {
   snow_depth: "Profondeur de neige",
   snowfall_sum: "Cumul de neige",
   precipitation_probability_max: "Probabilit\xE9 de pr\xE9cipitations max",
+  precipitation_probability: "Probabilit\xE9 de pr\xE9cipitations",
   wind_speed_10m_max: "Vitesse du vent max",
   wind_direction_10m_dominant: "Direction du vent dominante",
   wind_gusts_10m_max: "Rafales de vent max",

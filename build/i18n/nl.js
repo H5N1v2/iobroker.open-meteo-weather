@@ -56,6 +56,7 @@ const nl = {
   snow_depth: "Sneeuwhoogte",
   snowfall_sum: "Totale sneeuwval",
   precipitation_probability_max: "Max. neerslagkans",
+  precipitation_probability: "Neerslagkans",
   wind_speed_10m_max: "Max. windsnelheid",
   wind_direction_10m_dominant: "Overheersende windrichting",
   wind_gusts_10m_max: "Max. windstoten",

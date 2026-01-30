@@ -34,6 +34,7 @@ export const zh = {
 	snow_depth: '雪深',
 	snowfall_sum: '总降雪量',
 	precipitation_probability_max: '最大降水概率',
+	precipitation_probability: '降水概率',
 	wind_speed_10m_max: '最大风速',
 	wind_direction_10m_dominant: '主导风向',
 	wind_gusts_10m_max: '最大阵风',
