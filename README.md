@@ -67,7 +67,7 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 |:---|:---|
 | `weather.current` | Current measurements (Temp, Dew point, Wind, etc.) |
 | `weather.forecast.dayX` | Daily forecast for Day X |
-| `weather.forecast.hourly.hourX` | Stündliche Details pro volle Stunde |
+| `weather.forecast.hourly.hourX` | Hourly details per full hour |
 | `air.current` | Air quality and pollen levels as text and value |
 
 ---
