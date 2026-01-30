@@ -77,7 +77,7 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 After a new adapter update, it is recommended to delete the entire directory tree and let it be recreated.
 
 ## Change Log
-### **WORK IN PROGRESS**
+### 2.2.2 (2026-01-30)
 * (H5N1v2) fix: update js-controller and admin dependencies to latest versions
 * (H5N1v2) fix: add missing responsive breakpoints in jsonConfig
 * (H5N1v2) fix: Chinese translations files & correct import path for Chinese translations
