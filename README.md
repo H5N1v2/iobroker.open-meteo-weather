@@ -44,7 +44,7 @@ After installation, configure the following fields in the instance settings:
 2.  **Coordinates (Latitude & Longitude):** Determine your location (you can find these on openstreetmap.org).
 3.  **Update Interval:** Time interval in minutes (Default: 30 min).
 4.  **Forecast Days:** Number of days for the daily overview (0–16 days).
-5.  **Hourly Forecast:** Toggle and set the number of hours per day (e.g., the next 24 hours).
+5.  **Hourly Forecast:** Enable or disable this option and set the number of hours (e.g., the next 24 hours). For example, hour0 is the current hour, hour1 is the next hour, and so on.
 6.  **Optional Data:** Checkboxes for pollen and air quality data.
 7.  **Units:** Choose between Metric and Imperial.
 
@@ -57,6 +57,7 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 * **Weather Icons:** Found under `weather.current.icon_url`. The adapter automatically distinguishes between day and night (e.g., Sun vs. Moon).
 * **Wind Direction:** Static paths under `wind_direction_icon` display a compass arrow corresponding to the degree value.
 * **Wind Gust Warning:** A warning icon is displayed under `wind_gust_icon` for wind speeds above approx. 39 km/h (Bft 6), featuring levels 0–4.
+* **Moon Phases Icons:** Moon icons can be found under `moon_phase_icon` they display the moon phases.
 
 ---
 
@@ -66,11 +67,26 @@ The adapter provides dynamic icon paths that can be used directly in visualizati
 |:---|:---|
 | `weather.current` | Current measurements (Temp, Dew point, Wind, etc.) |
 | `weather.forecast.dayX` | Daily forecast for Day X |
-| `weather.forecast.hourly.dayX.hourY` | Hourly details per day |
+| `weather.forecast.hourly.hourX` | Stündliche Details pro volle Stunde |
 | `air.current` | Air quality and pollen levels as text and value |
 
 ---
+
+## Update note
+
+After a new adapter update, it is recommended to delete the entire directory tree and let it be recreated.
+
 ## Change Log
+### **WORK IN PROGRESS**
+* (H5N1v2) fix: update js-controller and admin dependencies to latest versions
+* (H5N1v2) fix: add missing responsive breakpoints in jsonConfig
+* (H5N1v2) fix: Chinese translations files & correct import path for Chinese translations
+* (H5N1v2) fix: add missing translation for precipitation probability to the translations
+* (H5N1v2) fix: Adjusted the creation of hourly state icons to account for day/night conditions.
+* (H5N1v2) add: Added debug logs to track the execution flow and data processing for better traceability.
+* (H5N1v2) Enhance performance and readability by caching translations, unit maps, and imperial settings.
+* (H5N1v2) Refactor icon retrieval methods for wind direction and moon phases, optimize cleanup logic for deleted locations, improve state creation and updating with consistent translation handling.
+
 ### 2.2.1 (2026-01-26)
 * (H5N1v2) fix: Correct quotation marks for relative humidity translation in French
 
